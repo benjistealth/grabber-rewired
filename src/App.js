@@ -1,9 +1,18 @@
 import './App.css';
+import Nav from './components/home/Nav';
+import Jumbotron from './components/home/Jumbotron';
+import RecipeSearchBar from './components/home/RecipeSearchBar';
 
 function App() {
   return (
     <div className="App">
-      <h1>HI EVERYBODY</h1>
+      <header>
+        <Nav />
+        <Jumbotron />
+      </header>
+      <main>
+        <RecipeSearchBar />
+      </main>
     </div>
   );
 }
