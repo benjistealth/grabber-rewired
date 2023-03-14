@@ -1,7 +1,7 @@
-import './App.css';
-import Nav from './components/home/Nav';
-import Jumbotron from './components/home/Jumbotron';
-import RecipeSearchBar from './components/home/RecipeSearchBar';
+import "./App.css";
+import Nav from "./components/home/Nav";
+import Jumbotron from "./components/home/Jumbotron";
+import RecipeContainer from "./pages/RecipeSearchContainer";
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
         <Jumbotron />
       </header>
       <main>
-        <RecipeSearchBar />
+        <RecipeContainer />
       </main>
     </div>
   );
