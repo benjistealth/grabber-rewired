@@ -1,3 +1,6 @@
+import "../../css/card.css"
+
+
 function RecipeCardDisplay(props) {
   return (
     <div className="card-container">

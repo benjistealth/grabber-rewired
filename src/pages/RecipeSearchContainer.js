@@ -4,7 +4,7 @@ import RecipeSearchBar from "../components/home/RecipeSearchBar";
 import RecipeCardDisplay from "../components/home/RecipeCardDisplay";
 import Wrapper from "../components/home/Wrapper";
 
-function RecipeContainer() {
+function RecipeSearchContainer() {
   const [search, setSearch] = useState(""); // useState is empty string
   const [spoonacularResults, setSpoonacularResults] = useState([]);
   // const [resetCards, setResetCards] = useState([]);
@@ -41,7 +41,6 @@ function RecipeContainer() {
         onClick={handleFormSubmit}
       />
       <div className="container">
-        
         <Wrapper>
           {spoonacularResults.map((result) => (
             <RecipeCardDisplay 
@@ -57,4 +56,4 @@ function RecipeContainer() {
   );
 }
 
-export default RecipeContainer;
+export default RecipeSearchContainer;
