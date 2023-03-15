@@ -62,7 +62,7 @@ function RecipeSearchContainer() {
 
     UnsplashAPI(search)
     .then((results) => {
-      setBackgroundImg(results[1].urls.large);
+      setBackgroundImg(results[1].urls.regular);
     })
     .catch((err) => {
       throw err;
