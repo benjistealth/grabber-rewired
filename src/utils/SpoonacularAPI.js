@@ -9,6 +9,7 @@ function SpoonacularAPI(query) {
   return axios
     .get(BASEURL + query + APIKEY + URLEND)
     .then((response) => {
+      console.log(response)
       return response.data.results;
      })
     .catch((err) => {
