@@ -3,7 +3,7 @@ import "../../css/card.css"
 
 function RecipeCardDisplay(props) {
   return (
-    <div className="card-container">
+    <div className="card-container" style={{background: `rgba(0,0,0,0.5)`}}>
       <div className="card">
         <div className="img-container">
           <img alt={props.name} src={props.image} />

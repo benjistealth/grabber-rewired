@@ -38,7 +38,7 @@ function RecipeSearchContainer() {
     })
   };
 
-  const style = {
+  const backgroundStyle = {
     backgroundImage: `url("${backgroundImg}")`,
     backgroundPosition: `center`,
     backgroundRepeat: `no-repeat`,
@@ -46,9 +46,9 @@ function RecipeSearchContainer() {
   }
 
   return (
-    <div  style={style}>
-    <div className="container" style={{background: `rgba(0,0,0,0.5)`}}>
-      <RecipeSearchBar
+    <div  style={backgroundStyle}>
+    <div className="container">
+    <RecipeSearchBar
         onChange={handleChange}
         value={search}
         onClick={handleFormSubmit}

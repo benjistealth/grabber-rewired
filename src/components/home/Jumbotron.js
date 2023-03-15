@@ -3,7 +3,7 @@ function Jumbotron() {
     <section className="hero is-medium is-link">
       <div className="hero-body">
         <p className="title">Grabber Rewired</p>
-        <p className="subtitle">GOOD TIMES</p>
+        <p className="subtitle">By Ben Shingleton, Leanne Anneble, Shane Lynch & Toby King</p>
       </div>
     </section>
   );
