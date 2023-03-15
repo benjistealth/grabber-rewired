@@ -8,7 +8,7 @@ import UnsplashAPI from "../utils/unsplashAPI";
 function RecipeSearchContainer() {
   const [search, setSearch] = useState(""); // useState is empty string
   const [spoonacularResults, setSpoonacularResults] = useState([]);
-  const [backgroundImg, setBackgroundImg] = useState();
+  const [unsplashImage, setBackgroundImg] = useState();
 
   function handleChange(e) {
     setSearch(e.target.value); // sets search var to search value
@@ -30,7 +30,6 @@ function RecipeSearchContainer() {
 
     UnsplashAPI(search)
     .then((results) => {
-      console.log(results[0].urls.full);
       setBackgroundImg(results[0].urls.full);
     })
     .catch((err) => {
@@ -39,7 +38,7 @@ function RecipeSearchContainer() {
   };
 
   const backgroundStyle = {
-    backgroundImage: `url("${backgroundImg}")`,
+    backgroundImage: `url("${unsplashImage}")`,
     backgroundPosition: `center`,
     backgroundRepeat: `no-repeat`,
     backgroundSize: `cover`
