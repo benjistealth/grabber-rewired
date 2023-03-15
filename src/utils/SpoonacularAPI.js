@@ -6,11 +6,14 @@ const URLEND = "&includeInstruction=true&addRecipeInformation=true&number=9"
 
 
 function SpoonacularAPI(query) {
-  axios
+  return axios
     .get(BASEURL + query + APIKEY + URLEND)
     .then((response) => {
-      console.log(response.data.results)
-  })
+      return response.data.results;
+     })
+    .catch((err) => {
+      throw err
+    })
 }
 
 export default SpoonacularAPI;
