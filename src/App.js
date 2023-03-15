@@ -2,8 +2,8 @@ import "./App.css";
 import Nav from "./components/home/Nav";
 import Jumbotron from "./components/home/Jumbotron";
 import RecipeSearchContainer from "./pages/RecipeSearchContainer";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import RecipePage from "./pages/RecipePage";
+// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
 
 function App() {
   return (
@@ -12,14 +12,11 @@ function App() {
         <Nav />
         <Jumbotron />
       </header>
-      <Router>
-        <main>
-          <RecipeSearchContainer />
-          <Routes>
-            <Route path="/" element={<RecipePage />} />
-          </Routes>
-        </main>
-      </Router>
+      <main>
+        
+        <RecipeSearchContainer />
+        {/* <Route path="/" element={<RecipePage />} /> */}
+      </main>
     </div>
   );
 }

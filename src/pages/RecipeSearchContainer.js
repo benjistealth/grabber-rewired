@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// import { useNavigate } from "react-router-dom";
 import SpoonacularAPI from "../utils/SpoonacularAPI";
 import RecipeSearchBar from "../components/home/RecipeSearchBar";
 import RecipeCardDisplay from "../components/home/RecipeCardDisplay";
@@ -12,30 +13,39 @@ function RecipeSearchContainer() {
   // const [selectedRecipe, setSelectedRecipe] = useState([]);
   // const [friends, setFriends] = useState();
 
+
+  // const navigate = useNavigate();
+    
+  // function goToProject(page) {
+  //   navigate(page, { replace: true });
+
+  //     console.log('Page chosen ', page);
+  //     //when the project is selected, the chosen project page will be shown 
+  //     //where you can click through to the project itself
+  //     //the project page will have some text talking about the project
+  // }
+
+
   function handleChange(e) {
     setSearch(e.target.value); // sets search var to search value
   }
 
   function handleFormSubmit(e) {
     e.preventDefault();
+    localStorage.setItem('recipe-results', JSON.stringify(spoonacularResults));
+
     searchRecipes(search); // function starts axios GET with search parameter 
   }
 
   function handleCardClick(e) {
+    // goToProject("./Recipe")
     const recipeId = parseInt(e.target.alt)
-  
     for(let i = 0; i < spoonacularResults.length; i++) {
-
-      console.log(typeof spoonacularResults[i].id)
-      
       if(spoonacularResults[i].id === recipeId){
-        console.log(spoonacularResults[i]);
         localStorage.setItem('individual-result', JSON.stringify(spoonacularResults[i]));
-
       }
     }
     // setSelectedRecipe(spoonacularResults)
-    localStorage.setItem('recipe-results', JSON.stringify(spoonacularResults));
 
   };
 
@@ -52,7 +62,7 @@ function RecipeSearchContainer() {
 
     UnsplashAPI(search)
     .then((results) => {
-      setBackgroundImg(results[1].urls.full);
+      setBackgroundImg(results[1].urls.large);
     })
     .catch((err) => {
       throw err;
@@ -69,6 +79,8 @@ function RecipeSearchContainer() {
   // function consoleLog(query) {
   //   console.log()
   // }
+
+  
 
   return (
     <div style={backgroundStyle}>
@@ -87,7 +99,7 @@ function RecipeSearchContainer() {
               name={result.title}
               image={result.image}
               onClick={handleCardClick}
-                  
+              
             />
           ))}
         </Wrapper>
@@ -127,10 +139,10 @@ export default RecipeSearchContainer;
 //         navigate(page);
 
 //         console.log('Page chosen ', page);
-//         //when the project is selected, the chosen project page will be shown 
-//         //where you can click through to the project itself
-//         //the project page will have some text talking about the project
-//     }
+        //when the project is selected, the chosen project page will be shown 
+        //where you can click through to the project itself
+        //the project page will have some text talking about the project
+    // }
 
 //     return (
 //         <div className="container">
