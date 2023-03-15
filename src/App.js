@@ -5,7 +5,7 @@ import RecipeContainer from "./pages/RecipeSearchContainer";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" data-test="component-app">
       <header>
         <Nav />
         <Jumbotron />
