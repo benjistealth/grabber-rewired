@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+
+
 function Login() {
   const navigate = useNavigate();
   const [input, setInput] = useState({
@@ -9,6 +11,10 @@ function Login() {
     email: "",
     password: "",
   });
+
+  function Signup() { 
+    navigate("/SignUp");
+};
   
   const handleLogin = (e) => {
     e.preventDefault();
@@ -77,7 +83,7 @@ function Login() {
                 <div>
                   <p className="mb-0  text-center">
                     Don't have an account?
-                    <a href="/SignUp" className="text-primary fw-bold">
+                    <a onClick={Signup} className="text-primary fw-bold">
                       Sign Up
                     </a>
                   </p>
