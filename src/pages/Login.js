@@ -83,9 +83,9 @@ function Login() {
                 <div>
                   <p className="mb-0  text-center">
                     Don't have an account?
-                    <a onClick={Signup} className="text-primary fw-bold">
+                    <button onClick={Signup} className="text-primary fw-bold signup-btn">
                       Sign Up
-                    </a>
+                    </button>
                   </p>
                 </div>
               </div>
