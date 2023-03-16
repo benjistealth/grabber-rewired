@@ -2,6 +2,8 @@ import "./App.css";
 import Nav from "./components/home/Nav";
 import Jumbotron from "./components/home/Jumbotron";
 import RecipeSearchContainer from "./pages/RecipeSearchContainer";
+// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
 
 function App() {
   return (
@@ -11,7 +13,9 @@ function App() {
         <Jumbotron />
       </header>
       <main>
+        
         <RecipeSearchContainer />
+        {/* <Route path="/" element={<RecipePage />} /> */}
       </main>
     </div>
   );
