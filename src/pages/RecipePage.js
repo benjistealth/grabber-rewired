@@ -13,9 +13,9 @@ function RecipePage() {
   return (
     <div>
  
-      <button className="btn btn-back" onClick={GoBack}></button>
+      <button className="btn btn-back" onClick={GoBack}>Go Back</button>
    
-      <button className="btn btn-back" onClick={GoBack}></button>
+      <button className="btn btn-back" onClick={GoBack}>Go back again!</button>
     </div>
   );
 }
