@@ -24,19 +24,19 @@ function Login() {
   }
 
   return (
-    <div class="vh-100 d-flex justify-content-center align-items-top">
-      <div class="container">
-        <div class="row d-flex justify-content-center">
-          <div class="col-12 col-md-8 col-lg-6">
-            <div class="card bg-white shadow-lg">
-              <div class="card-body p-5">
-                <form class="mb-3 mt-md-4" onSubmit={handleLogin}>
-                  <h2 class="fw-bold mb-2 text-uppercase ">
+    <div className="vh-100 d-flex justify-content-center align-items-top">
+      <div className="container">
+        <div className="row d-flex justify-content-center">
+          <div className="col-12 col-md-8 col-lg-6">
+            <div className="card bg-white shadow-lg">
+              <div className="card-body p-5">
+                <form className="mb-3 mt-md-4" onSubmit={handleLogin}>
+                  <h2 className="fw-bold mb-2 text-uppercase ">
                     Grabber Rewired Login
                   </h2>
-                  <p class=" mb-5">Please enter your login and password!</p>
-                  <div class="mb-3">
-                    <label for="email" class="form-label ">
+                  <p className=" mb-5">Please enter your login and password!</p>
+                  <div className="mb-3">
+                    <label htmlFor="email" className="form-label ">
                       Email address
                     </label>
                     <input
@@ -46,13 +46,13 @@ function Login() {
                         setInput({ ...input, [e.target.name]: e.target.value })
                       }
                       type="email"
-                      class="form-control"
+                      className="form-control"
                       id="email"
                       placeholder="name@example.com"
                     />
                   </div>
-                  <div class="mb-3">
-                    <label for="password" class="form-label ">
+                  <div className="mb-3">
+                    <label htmlFor="password" className="form-label ">
                       Password
                     </label>
                     <input
@@ -62,21 +62,22 @@ function Login() {
                         setInput({ ...input, [e.target.name]: e.target.value })
                       }
                       type="password"
-                      class="form-control"
+                      className="form-control"
                       id="password"
                       placeholder="*******"
+                      autoComplete="on"
                     />
                   </div>
-                  <div class="d-grid">
-                    <button class="btn btn-outline-dark" type="submit">
+                  <div className="d-grid">
+                    <button className="btn btn-outline-dark" type="submit">
                       Login
                     </button>
                   </div>
                 </form>
                 <div>
-                  <p class="mb-0  text-center">
+                  <p className="mb-0  text-center">
                     Don't have an account?
-                    <a href="/SignUp" class="text-primary fw-bold">
+                    <a href="/SignUp" className="text-primary fw-bold">
                       Sign Up
                     </a>
                   </p>
