@@ -12,7 +12,11 @@ code {
     monospace;
 }
 
-.signup-btn {
+.signup-login-box-btn {
   border-color: transparent;
   background-color: transparent;
+}
+
+.hom-log-sig {
+  
 }

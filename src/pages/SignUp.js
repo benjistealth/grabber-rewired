@@ -92,7 +92,7 @@ function SignUp() {
                 <div>
                   <p className="mb-0  text-center">
                     Already have an account?
-                    <button onClick={Login} className="text-primary fw-bold signup-btn">
+                    <button onClick={Login} className="text-primary fw-bold signup-login-box-btn">
                       Login
                     </button>
                   </p>
