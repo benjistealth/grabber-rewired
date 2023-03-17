@@ -1,0 +1,16 @@
+.btn-back {
+    border: .5px solid white !important;
+    color: white !important;
+    margin: 5px;
+}
+
+.foodTitle {
+    text-align: center;
+    text-decoration: underline;
+    font-size: calc(1.375rem + 1.5vw);
+}
+
+.imageContainer{
+    display: flex;
+    justify-content: center;
+}
