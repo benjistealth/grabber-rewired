@@ -66,12 +66,12 @@ function RecipeSearchContainer() {
     backgroundImage: `url("${unsplashImage}")`,
     backgroundPosition: `center`,
     backgroundRepeat: `no-repeat`,
-    backgroundSize: `cover`
+    backgroundSize: `cover`,
   }
 
 
   return (
-    <div style={backgroundStyle}>
+    <div style={backgroundStyle} className="cardContainer">
     <div className="container">
     <RecipeSearchBar
         onChange={handleChange}

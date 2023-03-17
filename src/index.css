@@ -10,7 +10,11 @@ html,
 .App,
 .home-main {
   background: black;
-  color: white !important;
+  /* color: white !important; */
+}
+
+.topnav {
+  background: black;
 }
 
 .signup-login-box-btn {

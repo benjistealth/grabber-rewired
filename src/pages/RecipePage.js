@@ -12,7 +12,7 @@ function RecipePage() {
   Ingredients(individualRecipe.id);
   console.log(Ingredients);
 	const GoBack = () => {
-		navigate(-1);
+		navigate("/RecipeSearchContainer");
   }
   
   const printRecipe = () => {
