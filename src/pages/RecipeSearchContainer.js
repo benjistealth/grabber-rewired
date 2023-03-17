@@ -9,11 +9,11 @@ import "../css/RecipeSearchContainer.css";
 
 
 function RecipeSearchContainer() {
-  const storedResults = JSON.parse(localStorage.getItem('recipe-results')) || [];
+  const storedResults = JSON.parse(localStorage.getItem('recipe-results')) || []; // checks for stored data or uses empty array if none found
   const [spoonacularResults, setSpoonacularResults] = useState(storedResults);
   // const [spoonacularResults, setSpoonacularResults] = useState([]);
   const [search, setSearch] = useState("");
-  const [unsplashImage, setBackgroundImg] = useState(localStorage.getItem('unsplashImage'));
+  const [unsplashImage, setBackgroundImg] = useState(localStorage.getItem('unsplashImage')); // draws background image from local storage
   // const [unsplashImage, setBackgroundImg] = useState();
   const navigate = useNavigate();
   console.log (storedResults)
@@ -114,6 +114,6 @@ export default RecipeSearchContainer;
 
 // react router create new page DONE
 
-// take that json data and show it on new page 
+// take that json data and show it on new page IN PROGRESS
 
 // react router new page will have buttons. event handlers needed for those

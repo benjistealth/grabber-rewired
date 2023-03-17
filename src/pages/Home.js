@@ -42,6 +42,12 @@ function Home() {
                 <button className="m-2 button are-medium is responsive is-link is-outlined hom-log-sig" type="button" onClick={Guest}>Continue as Guest</button>
             </div>
 
+            <div>
+                <br/> 
+                {/* blank space to compensate for footer issues */}
+                <br/>
+            </div>
+
         </div>
     );
 }
