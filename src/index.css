@@ -6,7 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+html,
 .App,
 .home-main {
   background: black;
@@ -16,8 +16,4 @@ body {
 .signup-login-box-btn {
   border-color: transparent;
   background: transparent;
-}
-
-.footer {
-  height: 3rem;
 }

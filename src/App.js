@@ -1,5 +1,5 @@
 import "./App.css";
-import Nav from "./components/home/Nav";
+// import Nav from "./components/home/Nav";
 import Jumbotron from "./components/home/Jumbotron";
 import RecipeSearchContainer from "./pages/RecipeSearchContainer";
 import Footer from "./components/home/Footer";
