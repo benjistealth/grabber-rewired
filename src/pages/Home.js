@@ -12,6 +12,10 @@ function Home() {
         navigate("/SignUp");
     };
 
+    function Guest() {
+        navigate("/RecipeSearchContainer");
+    };
+
     return (
         <div className="container content home-main">
             <div className="spiel row content">
@@ -35,6 +39,7 @@ function Home() {
             <h4 className="content pt-6 has-text-centered">User Registration / Login</h4>
                 <button className="m-2 button are-medium is responsive is-link is-outlined hom-log-sig" type="button" onClick={Login}>Login</button>
                 <button className="m-2 button are-medium is responsive is-link is-outlined hom-log-sig" type="button" onClick={Signup}>Register</button>
+                <button className="m-2 button are-medium is responsive is-link is-outlined hom-log-sig" type="button" onClick={Guest}>Continue as Guest</button>
             </div>
 
         </div>
