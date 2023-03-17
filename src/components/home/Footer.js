@@ -1,18 +1,19 @@
 function Footer() {
     const style = {
-        // display: 'flex',
+        position: 'fixed',
+        bottom: '0',
+        display: 'flex',
         justifyContent: 'center',
-        // alignItems: 'center',
+        alignItems: 'center',
         width: '100vw',
-        // height: '1rem',
-        // backgroundColor: 'blue !important',
+        height: '60px',
         background: "black",
     };
 
     const year = new Date().getFullYear();
 
     return (
-        <div className=" footer square border border-success d-flex align-items-center" style={style}>
+        <div className="border border-success " style={style}>
         <h4 className="d-flex align-items-center">© {year}<strong>{`   <Grabber Rewired />   👌`}</strong> </h4>
         
         </div>
@@ -20,4 +21,3 @@ function Footer() {
   };
   
   export default Footer;
-  

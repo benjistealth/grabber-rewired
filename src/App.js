@@ -6,7 +6,7 @@ import Footer from "./components/home/Footer";
 // import TestingPage from "./pages/TestingPage";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import RecipePage from "./pages/RecipePage";
-// import TestingPage from "./pages/TestingPage";
+import TestingPage from "./pages/TestingPage";
 // import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
@@ -30,6 +30,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/SignUp" element={<SignUp />} />
               <Route path="/Login" element={<Login />} />
+              <Route path="/Testing" element={<TestingPage />} />
               {/* <Route path="/Signup" element={<Signup />} />
               <Route path="/Login" element={<Login />} /> */}
               {/* <Route path="/RecipeSearchContainer" element={<RecipeSearchContainer />} /> */}

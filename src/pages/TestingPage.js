@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 function TestingPage() {
   const [isGlutenFree, setIsGlutenFree] = useState(true);
   const [isVegan, setIsVegan] = useState(true);
   const [isVegetarian, setIsVegetarian] = useState(true);
-  const [recipeArray, setRecipeArray] = useState([]);
-
+  const [recipeArrayGF, setRecipeArraGF] = useState([]);
+  const [recipeArrayV, setRecipeArrayV] = useState([]);
+  const [recipeArrayVEG, setRecipeArrayVEG] = useState([]);
+  
   const recipesJSON = JSON.parse(localStorage.getItem("recipe-results"));
 
   function handleGlutenFreeCheck() {
@@ -15,10 +17,10 @@ function TestingPage() {
         const filteredRecipes = recipesJSON.filter(
           (recipe) => recipe.glutenFree === isGlutenFree
         );
-        setRecipeArray([...recipeArray, filteredRecipes]);
+        setRecipeArraGF([...recipeArrayGF, filteredRecipes]);
       }
       if (isGlutenFree === false) {
-        setRecipeArray([]);
+        setRecipeArraGF([]);
       }
     });
   }
@@ -30,10 +32,10 @@ function TestingPage() {
         const filteredRecipes = recipesJSON.filter(
           (recipe) => recipe.vegan === isVegan
         );
-        setRecipeArray([...recipeArray, filteredRecipes]);
+        setRecipeArrayV([...recipeArrayV, filteredRecipes]);
       }
       if (isVegan === false) {
-        setRecipeArray([]);
+        setRecipeArrayV([]);
       }
     })
   }
@@ -45,17 +47,13 @@ function TestingPage() {
         const filteredRecipes = recipesJSON.filter(
           (recipe) => recipe.vegetarian === isVegetarian
         );
-        setRecipeArray([...recipeArray, filteredRecipes]);
+        setRecipeArrayVEG([...recipeArrayVEG, filteredRecipes]);
       }
       if (isVegetarian === false) {
-        setRecipeArray([]);
+        setRecipeArrayVEG([]);
       }
     })
   }
-
-  useEffect(() => {
-    console.log(recipeArray);
-  }, [recipeArray]);
 
   return (
     <div>
@@ -97,7 +95,31 @@ function TestingPage() {
         </label>
       </div>
       <ul>
-        {recipeArray.map((recipes, index) => (
+        {recipeArrayGF.map((recipes, index) => (
+          <li key={index}>
+            <ul>
+              {recipes.map((recipe, recipeIndex) => (
+                <li key={recipeIndex}>{recipe.title}</li>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ul>
+
+      <ul>
+        {recipeArrayV.map((recipes, index) => (
+          <li key={index}>
+            <ul>
+              {recipes.map((recipe, recipeIndex) => (
+                <li key={recipeIndex}>{recipe.title}</li>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ul>
+
+      <ul>
+        {recipeArrayVEG.map((recipes, index) => (
           <li key={index}>
             <ul>
               {recipes.map((recipe, recipeIndex) => (
