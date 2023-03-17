@@ -37,6 +37,10 @@ function RecipeSearchContainer() {
     navigate('/Testing');
   }
 
+  function homeButton() {
+    navigate('/');
+  }
+
   const searchRecipes = (query) => {
     SpoonacularAPI(query)
     .then((results) => {
@@ -79,6 +83,8 @@ function RecipeSearchContainer() {
         onClick={handleFormSubmit}
       />
       <button onClick={testingButton}>TESTING PAGE</button>
+      <button onClick={homeButton}>HOME PAGE</button>
+
       <div className="container">
         <Wrapper>
           {spoonacularResults.map((result) => (
@@ -88,7 +94,6 @@ function RecipeSearchContainer() {
               name={result.title}
               image={result.image}
               onClick={HandleCardClick}
-              
             />
           ))}
         </Wrapper>

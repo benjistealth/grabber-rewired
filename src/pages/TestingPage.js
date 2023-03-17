@@ -4,11 +4,14 @@ function TestingPage() {
   const [isGlutenFree, setIsGlutenFree] = useState(true);
   const [isVegan, setIsVegan] = useState(true);
   const [isVegetarian, setIsVegetarian] = useState(true);
+  const recipesJSON = JSON.parse(localStorage.getItem("recipe-results"));
+
   const [recipeArrayGF, setRecipeArraGF] = useState([]);
   const [recipeArrayV, setRecipeArrayV] = useState([]);
   const [recipeArrayVEG, setRecipeArrayVEG] = useState([]);
   
-  const recipesJSON = JSON.parse(localStorage.getItem("recipe-results"));
+
+
 
   function handleGlutenFreeCheck() {
     isGlutenFree === false ? setIsGlutenFree(true) : setIsGlutenFree(false);
