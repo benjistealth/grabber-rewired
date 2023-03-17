@@ -10,6 +10,10 @@ function SignUp() {
     password: "",
   });
 
+  function Login() { 
+    navigate("/Login");
+};
+
   const handleSignup = (e) => {
     e.preventDefault();
       localStorage.setItem("user", JSON.stringify(input));
@@ -85,7 +89,14 @@ function SignUp() {
                     </button>
                   </div>
                 </form>
-                <div></div>
+                <div>
+                  <p className="mb-0  text-center">
+                    Already have an account?
+                    <button onClick={Login} className="text-primary fw-bold signup-btn">
+                      Login
+                    </button>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
