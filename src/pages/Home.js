@@ -31,10 +31,10 @@ function Home() {
             </div>
             
 
-            <div className="row is-centered p-2">
+            <div className="row is-centered py-2">
             <p className="content pt-6 has-text-centered">User Registration / Login</p>
-                <button className="py-2 button are-medium is responsive is-link is-outlined hom-log-sig" type="button" onClick={Login}>Login</button>
-                <button className="button are-medium is responsive is-link is-outlined hom-log-sig" type="button" onClick={Signup}>Register</button>
+                <button className="m-2 button are-medium is responsive is-link is-outlined hom-log-sig" type="button" onClick={Login}>Login</button>
+                <button className="m-2 button are-medium is responsive is-link is-outlined hom-log-sig" type="button" onClick={Signup}>Register</button>
             </div>
 
         </div>
