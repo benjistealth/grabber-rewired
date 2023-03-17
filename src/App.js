@@ -7,7 +7,6 @@ import Footer from "./components/home/Footer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import RecipePage from "./pages/RecipePage";
 import TestingPage from "./pages/TestingPage";
-// import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
@@ -16,7 +15,7 @@ function App() {
   return (
     <div className="App" data-test="component-app">
       <header>
-        {/* <Nav /> */}
+        <Nav />
         <Jumbotron />
       </header>
       <main>

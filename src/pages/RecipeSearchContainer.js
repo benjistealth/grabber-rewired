@@ -69,11 +69,6 @@ function RecipeSearchContainer() {
     backgroundSize: `cover`
   }
 
-  // function consoleLog(query) {
-  //   console.log()
-  // }
-
-  
 
   return (
     <div style={backgroundStyle}>
@@ -113,6 +108,6 @@ export default RecipeSearchContainer;
 
 // react router create new page DONE
 
-// take that json data and show it on new page
+// take that json data and show it on new page 
 
 // react router new page will have buttons. event handlers needed for those

@@ -9,7 +9,6 @@ import Ingredients from "../utils/Ingredients.js";
 function RecipePage() {
   const navigate = useNavigate();
   const individualRecipe = JSON.parse(localStorage.getItem("individual-result"));
-  // console.log(individualRecipe.image)
   Ingredients(individualRecipe.id);
   console.log(Ingredients);
 	const GoBack = () => {
