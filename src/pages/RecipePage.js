@@ -32,8 +32,8 @@ function RecipePage() {
         <img src={individualRecipe.image} alt={individualRecipe.title} className="selectedImage"/>
       </div>
       <div>
-        {recipeSteps.map((step, index) => (
-          <p key={index}>{`${index + 1}.)  ${step.step}`}</p>
+        {recipeSteps.map((recipeStep, index) => (
+          <p key={index}>{`${index + 1}.)  ${recipeStep.step}`}</p>
         ))}
       </div>
 
