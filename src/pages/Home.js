@@ -13,7 +13,7 @@ function Home() {
     };
 
     return (
-        <div className="container content">
+        <div className="container content home-main">
             <div className="spiel row content">
                 <p className="title has-text-centered">
                     Welcome to the the offspring to the infamous Recipe Grabber
@@ -32,7 +32,7 @@ function Home() {
             
 
             <div className="row is-centered py-2">
-            <p className="content pt-6 has-text-centered">User Registration / Login</p>
+            <h4 className="content pt-6 has-text-centered">User Registration / Login</h4>
                 <button className="m-2 button are-medium is responsive is-link is-outlined hom-log-sig" type="button" onClick={Login}>Login</button>
                 <button className="m-2 button are-medium is responsive is-link is-outlined hom-log-sig" type="button" onClick={Signup}>Register</button>
             </div>

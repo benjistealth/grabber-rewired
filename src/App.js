@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="App" data-test="component-app">
       <header>
-        <Nav />
+        {/* <Nav /> */}
         <Jumbotron />
       </header>
       <main>

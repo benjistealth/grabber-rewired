@@ -7,16 +7,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App,
+.home-main {
+  background: black;
+  color: white !important;
 }
 
 .signup-login-box-btn {
   border-color: transparent;
-  background-color: transparent;
+  background: transparent;
 }
 
-.hom-log-sig {
-  
+.footer {
+  height: 3rem;
 }
