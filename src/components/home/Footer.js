@@ -1,6 +1,6 @@
 function Footer() {
     const style = {
-        position: 'fixed',
+        position: 'relative',
         bottom: '0',
         display: 'flex',
         justifyContent: 'center',

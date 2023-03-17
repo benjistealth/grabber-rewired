@@ -5,6 +5,7 @@ import RecipeSearchBar from "../components/home/RecipeSearchBar";
 import RecipeCardDisplay from "../components/home/RecipeCardDisplay";
 import Wrapper from "../components/home/Wrapper";
 import UnsplashAPI from "../utils/unsplashAPI";
+import "../css/RecipeSearchContainer.css";
 
 
 function RecipeSearchContainer() {
