@@ -1,14 +1,18 @@
 function Footer() {
     const style = {
-        textAlign: 'center',
+        position: 'fixed',
+        bottom: '0',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
         width: '100vw',
+        height: '50px',
         backgroundColor: 'black !important',
-        position: 'absolute',
-        bottom: '0px'
+        background: '#D3D3D3'
     };
 
     const year = new Date().getFullYear();
-    console.log(year)
+
     return (
         <div style={style}>
         <h4>© {year}<strong>{`   <Grabber Rewired />   👌`}</strong> </h4>

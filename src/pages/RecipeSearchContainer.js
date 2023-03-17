@@ -8,56 +8,35 @@ import UnsplashAPI from "../utils/unsplashAPI";
 
 
 function RecipeSearchContainer() {
-  const [search, setSearch] = useState(""); // useState is empty string
+  const [search, setSearch] = useState(""); 
   const [spoonacularResults, setSpoonacularResults] = useState([]);
   const [unsplashImage, setBackgroundImg] = useState();
-  // const [selectedRecipe, setSelectedRecipe] = useState([]);
-  // const [friends, setFriends] = useState();
   const navigate = useNavigate();
 
-
-  // const navigate = useNavigate();
-    
-  // function goToProject(page) {
-  //   navigate(page, { replace: true });
-
-  //     console.log('Page chosen ', page);
-  //     //when the project is selected, the chosen project page will be shown 
-  //     //where you can click through to the project itself
-  //     //the project page will have some text talking about the project
-  // }
-
-
   function handleChange(e) {
-    setSearch(e.target.value); // sets search var to search value
+    setSearch(e.target.value);
   }
 
   function handleFormSubmit(e) {
     e.preventDefault();
     localStorage.setItem('recipe-results', JSON.stringify(spoonacularResults));
-
-    searchRecipes(search); // function starts axios GET with search parameter 
+    searchRecipes(search); 
   }
 
   function HandleCardClick(e) {
-    // goToProject("./Recipe")
-    e.preventDefault()
     const recipeId = parseInt(e.target.alt)
     for(let i = 0; i < spoonacularResults.length; i++) {
       if(spoonacularResults[i].id === recipeId){
         localStorage.setItem('individual-result', JSON.stringify(spoonacularResults[i]));
       }
     }  
-
     navigate("/RecipePage");
-
   };
 
   const searchRecipes = (query) => {
     SpoonacularAPI(query)
     .then((results) => {
       console.log(results);
-      
       setSpoonacularResults(results);
     }) 
     .catch((err) => {
@@ -66,7 +45,8 @@ function RecipeSearchContainer() {
 
     UnsplashAPI(search)
     .then((results) => {
-      setBackgroundImg(results[1].urls.regular);
+      console.log(results)
+      setBackgroundImg(results[Math.floor(Math.random() * 9)].urls.regular);
     })
     .catch((err) => {
       throw err;
