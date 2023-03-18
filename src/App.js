@@ -17,7 +17,7 @@ function App() {
         <Nav />
         <Jumbotron />
       </header>
-      <main>
+      <main className="mainbody pt-4">
         <Router>
           <div>
             <Routes>
@@ -31,8 +31,8 @@ function App() {
             </Routes>
           </div>
         </Router>
-        <Footer />
       </main>
+      <Footer />
     </div>
   );
 }
