@@ -4,6 +4,11 @@
     margin: 5px;
 }
 
+.maincontainer {
+    margin-bottom: 30px;
+    max-height: 100vh;
+}
+
 .foodTitle {
     text-align: center;
     text-decoration: underline;
@@ -11,8 +16,20 @@
 }
 
 .imageContainer{
-    min-height: 100vh;
+    max-height: 100vh;
     display: flex;
     justify-content: center;
+    margin-bottom: 20px;
 }
-    
+
+.container {
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.titleHeader {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}

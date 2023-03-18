@@ -1,8 +1,8 @@
 function Nav() {
   return (
     // <div className="topnav nav navbar container-fluid justify-content-center">
-      <ul class="nav justify-content-center">
-        <li class="nav-item">
+      <ul className="nav justify-content-center">
+        <li className="nav-item">
         <h1>Page Title Here</h1>
         </li>
       </ul>

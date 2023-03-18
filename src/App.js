@@ -38,8 +38,8 @@ function App() {
               {/* <Route path="contact/*" element={<Contact />} /> */}
             </Routes>
           </div>
-          <Footer />
         </Router>
+        <Footer />
       </main>
     </div>
   );
