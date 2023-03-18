@@ -13,7 +13,7 @@ function Home() {
     };
 
     function Guest() {
-        navigate("/RecipeSearchContainer");
+        navigate("/RecipeSearchGuest");
     };
 
     return (
