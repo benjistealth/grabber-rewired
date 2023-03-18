@@ -5,8 +5,8 @@
 }
 
 .maincontainer {
-    margin-bottom: 30px;
     max-height: 100vh;
+    background: black;
 }
 
 .foodTitle {
@@ -36,4 +36,8 @@
 
 .custom-range {
     width: 80%;
+}
+
+.recipe {
+    background: black;
 }
