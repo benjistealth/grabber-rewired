@@ -10,9 +10,10 @@ function RecipePage() {
   const navigate = useNavigate();
   const individualRecipe = JSON.parse(localStorage.getItem("individual-result"));
   Ingredients(individualRecipe.id);
-  const secondAPICall = JSON.parse(localStorage.getItem("ingredients"))
-  const recipeSteps = secondAPICall.data.analyzedInstructions[0].steps
-  const ingredients = secondAPICall.data.extendedIngredients
+  const secondAPICall = JSON.parse(localStorage.getItem("ingredients"));
+  const recipeSteps = secondAPICall.data.analyzedInstructions[0].steps;
+  const ingredients = secondAPICall.data.extendedIngredients;
+
 	const GoBack = () => {
 		navigate("/RecipeSearchContainer");
   }
@@ -23,7 +24,7 @@ function RecipePage() {
       type: "html"
     });
   }
-  console.log(printRecipe)
+  // console.log(printRecipe)
   return (
     <div className="maincontainer">
       <button className="btn btn-back" onClick={GoBack}>
