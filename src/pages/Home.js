@@ -20,7 +20,7 @@ function Home() {
         <div className="container content home-main">
             <div className="spiel row content">
                 <p className="title has-text-centered">
-                    Welcome to the the offspring to the infamous Recipe Grabber
+                    Welcome to the offspring from the infamous Recipe Grabber
                 </p>
                 <h3 className="is-size-3 py-2">Stacked with new features:</h3>
                 <ul className="is-size-4">
