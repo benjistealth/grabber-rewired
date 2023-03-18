@@ -39,7 +39,7 @@ function RecipePage() {
           className="selectedImage"
         />
       </div>
-      <div className="container">
+      <div className="container infocontainer">
         <div className="col-md-8 ms-4 mt-4 instructionscontainer">
           <h1 className="titleHeader">Instructions</h1>
           {recipeSteps.map((recipeStep, index) => (
