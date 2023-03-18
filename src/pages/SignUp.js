@@ -25,7 +25,7 @@ function SignUp() {
       <div className="container">
         <div className="row d-flex justify-content-center">
           <div className="col-12 col-md-8 col-lg-6">
-            <div className="card bg-white shadow-lg">
+            <div className="card bg-white shadow-lg" id="signupcard">
               <div className="card-body p-5">
                 <form className="mb-3 mt-md-4" onSubmit={handleSignup}>
                   <h2 className="fw-bold mb-2 text-uppercase ">

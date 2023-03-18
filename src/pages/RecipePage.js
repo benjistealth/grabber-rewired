@@ -25,26 +25,38 @@ function RecipePage() {
   }
   console.log(printRecipe)
   return (
-    <div>
-      <button className="btn btn-back" onClick={GoBack}>Go Back</button><br/>
-      <h1 className="foodTitle">{individualRecipe.title}</h1><br/>
+    <div className="maincontainer">
+      <button className="btn btn-back" onClick={GoBack}>
+        Go Back
+      </button>
+      <br />
+      <h1 className="foodTitle">{individualRecipe.title}</h1>
+      <br />
       <div className="imageContainer">
-        <img src={individualRecipe.image} alt={individualRecipe.title} className="selectedImage"/>
+        <img
+          src={individualRecipe.image}
+          alt={individualRecipe.title}
+          className="selectedImage"
+        />
       </div>
-      <div>
-        {recipeSteps.map((recipeStep, index) => (
-          <p key={index}>{`${index + 1}.)  ${recipeStep.step}`}</p>
-        ))}
+      <div className="container">
+        <div className="col-md-8 ms-4 mt-4 instructionscontainer">
+          <h1 className="titleHeader">Instructions</h1>
+          {recipeSteps.map((recipeStep, index) => (
+            <p className="instructions mt-2" key={index}>{`${index + 1}.)  ${
+              recipeStep.step
+            }`}</p>
+          ))}
+        </div>
+        <div className="col-md-3 ms-5 mt-4 ingredientscontainer">
+          <h1 className="titleHeader">Ingredients</h1>
+          {ingredients.map((ingredient, index) => (
+            <p className="ingredients mt-2" key={index}>{`${index + 1}.) ${
+              ingredient.amount
+            }${ingredient.unit} ${ingredient.name}`}</p>
+          ))}
+        </div>
       </div>
-
-      <div>
-        {ingredients.map((ingredient, index) => (
-          <p key={index}>{`${index + 1}.) ${ingredient.amount}${ingredient.unit} ${ingredient.name}`}</p>
-        ))}
-      </div>
-
-      <div>where we put the steps</div>
-      <button className="btn btn-back" onClick={GoBack}>Go Back</button>
     </div>
   );
 }
