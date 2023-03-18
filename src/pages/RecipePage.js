@@ -2,20 +2,14 @@ import React  from "react";
 import { useNavigate } from 'react-router-dom';
 import printJS from "print-js";
 import "../css/RecipePage.css";
-import Ingredients from "../utils/Ingredients.js";
-
-
 
 function RecipePage() {
   const navigate = useNavigate();
   const individualRecipe = JSON.parse(localStorage.getItem("individual-result"));
-  Ingredients(individualRecipe.id);
-  const secondAPICall = JSON.parse(localStorage.getItem("ingredients"));
-  const recipeSteps = secondAPICall.data.analyzedInstructions[0].steps;
-  const ingredients = secondAPICall.data.extendedIngredients;
-
-	const GoBack = () => {
-		navigate("/RecipeSearchContainer");
+  const recipeSteps = individualRecipe.analyzedInstructions[0].steps;
+  const ingredients = individualRecipe.extendedIngredients;
+  const GoBack = () => {
+    navigate("/RecipeSearchContainer");
   }
   
   const printRecipe = () => {
@@ -24,7 +18,8 @@ function RecipePage() {
       type: "html"
     });
   }
-  // console.log(printRecipe)
+  console.log(printRecipe);
+
   return (
     <div className="maincontainer">
       <button className="btn btn-back" onClick={GoBack}>
@@ -59,7 +54,7 @@ function RecipePage() {
             {ingredients.map((ingredient, index) => (
               <p className="ingredients mt-2" key={index}>{`${index + 1}.) ${
                 ingredient.amount
-              }${ingredient.unit} ${ingredient.name}`}</p>
+              } ${ingredient.unit} ${ingredient.name}`}</p>
             ))}
           </div>
         </div>

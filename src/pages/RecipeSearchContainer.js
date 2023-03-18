@@ -11,12 +11,9 @@ import "../css/RecipeSearchContainer.css";
 function RecipeSearchContainer() {
   const storedResults = JSON.parse(localStorage.getItem('recipe-results')) || []; // checks for stored data or uses empty array if none found
   const [spoonacularResults, setSpoonacularResults] = useState(storedResults);
-  // const [spoonacularResults, setSpoonacularResults] = useState([]);
   const [search, setSearch] = useState("");
   const [unsplashImage, setBackgroundImg] = useState(localStorage.getItem('unsplashImage')); // draws background image from local storage
-  // const [unsplashImage, setBackgroundImg] = useState();
   const navigate = useNavigate();
-  console.log (storedResults)
   function handleChange(e) {
     setSearch(e.target.value);
   }
@@ -48,7 +45,6 @@ function RecipeSearchContainer() {
   const searchRecipes = (query) => {
     SpoonacularAPI(query)
       .then((results) => {
-        // console.log(results);
         setSpoonacularResults(results);
         localStorage.setItem('recipe-results', JSON.stringify(results)); // save new results to local storage
       })
@@ -58,7 +54,6 @@ function RecipeSearchContainer() {
 
     UnsplashAPI(search)
       .then((results) => {
-        // console.log(results)
         const backgroundImage = results[Math.floor(Math.random() * 9)].urls.regular;
         setBackgroundImg(backgroundImage);
         localStorage.setItem('unsplashImage', backgroundImage);
@@ -74,7 +69,6 @@ function RecipeSearchContainer() {
     backgroundRepeat: `no-repeat`,
     backgroundSize: `cover`,
   }
-
 
   return (
     <div style={backgroundStyle} className="cardContainer">
@@ -114,6 +108,10 @@ export default RecipeSearchContainer;
 
 // react router create new page DONE
 
-// take that json data and show it on new page IN PROGRESS
+// take that json data and show it on new page DONE
 
-// react router new page will have buttons. event handlers needed for those
+// react router new page will have buttons. event handlers needed for those DONE
+
+// Ben, working on send email function & clean up file structure
+
+// Toby, working on nutritional info

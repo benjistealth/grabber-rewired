@@ -10,9 +10,6 @@ function TestingPage() {
   const [recipeArrayV, setRecipeArrayV] = useState([]);
   const [recipeArrayVEG, setRecipeArrayVEG] = useState([]);
   
-
-
-
   function handleGlutenFreeCheck() {
     isGlutenFree === false ? setIsGlutenFree(true) : setIsGlutenFree(false);
     recipesJSON.forEach((recipe) => {

@@ -5,8 +5,7 @@ const APISHANE = "d138f64a7743495a93de5afbdd231e53"
 // const APILEANNE = "13e0fbc930ae4ce7bfedbe575f39da4b"
 const BASEURL = "https://api.spoonacular.com/recipes/complexSearch?query=";
 const APIKEY = "&apiKey=" + APISHANE;
-const URLEND = "&includeInstruction=true&addRecipeInformation=true&number=9"
-
+const URLEND = "&addRecipeNutrition=true&fillIngredients=true&instructionsRequired=true&addRecipeInformation=true&number=9"
 
 function SpoonacularAPI(query) {
   return axios
