@@ -50,14 +50,14 @@ function RecipePage() {
           />
         </div>
         <div className="container infocontainer">
-          <div className="col-md-2 ms-4 mt-4 instructionscontainer">
+          <div className="col-md-2 ms-4 mt-5 mb-5 instructionscontainer">
             <h1 className="titleHeader">Nutrition</h1>
               <p>{`Carbs: ${caloricBreakdown.percentCarbs}%`}</p>
               <p>{`Fat: ${caloricBreakdown.percentFat}%`}</p>
               <p>{`Protein: ${caloricBreakdown.percentProtein}%`}</p>
           
           </div>
-          <div className="col-md-6 ms-4 mt-4 instructionscontainer">
+          <div className="col-md-6 ms-4 mt-5 mb-5 instructionscontainer">
             <h1 className="titleHeader">Instructions</h1>
             {recipeSteps.map((recipeStep, index) => (
               <p className="instructions mt-2" key={index}>{`${index + 1}.)  ${
@@ -65,7 +65,7 @@ function RecipePage() {
               }`}</p>
             ))}
           </div>
-          <div className="col-md-3 ms-5 mt-4 ingredientscontainer">
+          <div className="col-md-3 ms-5 mt-5 mb-5 ingredientscontainer">
             <h1 className="titleHeader">Ingredients</h1>
             <label htmlFor="customRange2">{`Serving size: ${servingSize}`}</label>
             <input type="range" className="custom-range" min="1" max="20" id="customRange2" value={servingSize} onChange={handleSlider}></input>

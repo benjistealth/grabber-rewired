@@ -17,6 +17,9 @@ html,
   background: black;
 }
 
+.mainbody{
+  height: 100vh;
+}
 .signup-login-box-btn {
   border-color: transparent;
   background: transparent;
