@@ -26,10 +26,11 @@ function Home() {
                 <ul className="is-size-4">
                     <li>User Signup/Login</li>
                     <li>Guest login with limited features</li>
-                    <li>Print recipe info</li>
-                    <li>Email recipe info</li>
+                    <li>Print recipe info when logged in</li>
+                    <li>Email recipe info when logged in</li>
                     <li>New chosen recipe pages</li>
-                    <li>Generated in React for responsive performance </li>
+                    <li>Adjust serving amounts</li>
+                    <li>Generated in React for responsive page changes</li>
                 </ul>
             </div>
             
