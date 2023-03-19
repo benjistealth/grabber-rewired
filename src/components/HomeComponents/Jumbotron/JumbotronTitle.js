@@ -22,7 +22,7 @@ function JumbotronTitle() {
         case '/RecipeSearchGuest':
             jumbotronTitle = "Recipe Search";
             break;
-        case '/Favorites':
+        case '/Favourites':
             jumbotronTitle = "Favourite Recipes";
             break;
         case '/RecipePage':
