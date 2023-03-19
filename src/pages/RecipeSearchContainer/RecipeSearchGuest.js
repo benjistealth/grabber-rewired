@@ -74,7 +74,7 @@ function RecipeSearchGuest() {
           value={search}
           onClick={handleFormSubmit}
         />
-        <button onClick={homeButton}>HOME PAGE</button>
+        <button className="btn-home" onClick={homeButton}>HOME PAGE</button>
 
         <div className="container">
           <Wrapper>

@@ -4,3 +4,10 @@ html, body {
 .cardContainer {
     min-height: 100vh;
 }
+
+.btn-home {
+    border: .5px solid white !important;
+    color: white !important;
+    margin: 5px;
+    width: 10rem;
+}
