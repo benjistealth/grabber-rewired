@@ -21,7 +21,7 @@ function RecipePageGuest() {
       <br />
       <br />
       <div className="recipe" id="printRecipe">
-        <h1 className="foodTitle">{individualRecipe.title}</h1>
+        {/* <h1 className="foodTitle">{individualRecipe.title}</h1>
         <br />
         <div className="imageContainer">
           <img
@@ -29,7 +29,7 @@ function RecipePageGuest() {
             alt={individualRecipe.title}
             className="selectedImage"
           />
-        </div>
+        </div> */}
         <div className="container infocontainer">
           <div className="col-lg-8 col-md-6 col-sm-5 ms-3 mt-5 mb-5 instructionscontainer">
             <h1 className="titleHeader">Instructions</h1>
