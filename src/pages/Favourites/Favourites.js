@@ -6,6 +6,7 @@ import "./Favourites.css";
 
 function Favourites() {
     const storedResults = JSON.parse(localStorage.getItem('favourites'));
+    console.log(storedResults);
     // const [search, setSearch] = useState("");
 
     const navigate = useNavigate();
