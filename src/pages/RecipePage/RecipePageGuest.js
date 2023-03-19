@@ -31,7 +31,7 @@ function RecipePageGuest() {
           />
         </div>
         <div className="container infocontainer">
-          <div className="col-md-6 ms-4 mt-5 mb-5 instructionscontainer">
+          <div className="col-lg-8 col-md-6 col-sm-5 ms-3 mt-5 mb-5 instructionscontainer">
             <h1 className="titleHeader">Instructions</h1>
             {recipeSteps.map((recipeStep, index) => (
               <p className="instructions mt-2" key={index}>{`${index + 1}.)  ${
@@ -39,10 +39,12 @@ function RecipePageGuest() {
               }`}</p>
             ))}
           </div>
-          <div className="col-md-3 ms-5 mt-5 mb-5 ingredientscontainer">
+          <div className="col-lg-3 col-md-3 col-sm-3 ms-5 mt-5 mb-5 ingredientscontainer">
             <h1 className="titleHeader">Ingredients</h1>
             {ingredients.map((ingredient, index) => (
-              <p className="ingredients mt-2" key={index}>{`${index + 1}.) ${ingredient.amount}${ingredient.unit} ${ingredient.name}`}</p>
+              <p className="ingredients mt-2" key={index}>{`${index + 1}.) ${
+                ingredient.amount
+              }${ingredient.unit} ${ingredient.name}`}</p>
             ))}
           </div>
         </div>
