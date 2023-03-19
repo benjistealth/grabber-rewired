@@ -4,7 +4,10 @@ import spoonacularJSON from "../../utils/spoonacularJSON.json";
 
 // on app load, check local storage for user search data
 // if we dont have any user searches saved, load JSON into local storage as starting data - note 27 recipes in this lump
-if(localStorage.getItem('recipe-results') == null) {localStorage.setItem('recipe-results', JSON.stringify(spoonacularJSON));}
+if(localStorage.getItem('recipe-results') === null) {localStorage.setItem('recipe-results', JSON.stringify(spoonacularJSON));}
+if(localStorage.getItem('unsplashImage') == null) {localStorage.setItem('unsplashImage',"https://cals.cornell.edu/sites/default/files/styles/hero_home_desktop/public/2022-06/ifs-hero-food-still-life-1920x1080x72.jpg?h=36398e41&itok=3jGAIYIE");}
+// https://cals.cornell.edu/sites/default/files/styles/hero_home_desktop/public/2022-06/ifs-hero-food-still-life-1920x1080x72.jpg?h=36398e41&itok=3jGAIYIE
+
 
 function Home() {
     const navigate = useNavigate();
