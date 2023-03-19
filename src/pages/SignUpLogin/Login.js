@@ -12,10 +12,14 @@ function Login() {
     password: "",
   });
 
-  function Signup() { 
+  function Signup() {
     navigate("/SignUp");
-};
-  
+  };
+
+  function homeButton() {
+    navigate('/');
+  }
+
   const handleLogin = (e) => {
     e.preventDefault();
     const loggeduser = JSON.parse(localStorage.getItem("user"));
@@ -40,7 +44,7 @@ function Login() {
                   <h2 className="fw-bold mb-2 text-uppercase ">
                     Grabber Rewired Login
                   </h2>
-                  <p className=" mb-5">Please enter your login and password!</p>
+                  <p className=" mb-5">Please enter your email and password</p>
                   <div className="mb-3">
                     <label htmlFor="email" className="form-label ">
                       Email address
@@ -86,6 +90,12 @@ function Login() {
                     <button onClick={Signup} className="text-primary fw-bold signup-login-box-btn">
                       Sign Up
                     </button>
+                  </p>
+                  <p>
+                    <button className="text-primary fw-bold home-btn signup-login-box-btn" onClick={homeButton}>
+                      HOME PAGE
+                    </button>
+                    <br />
                   </p>
                 </div>
               </div>

@@ -6,3 +6,11 @@
   border-color: transparent;
   background: transparent;
 }
+
+.link-box {
+  flex-direction: row;
+}
+
+.homeBtn {
+  /* margin-right: 10rem; */
+}

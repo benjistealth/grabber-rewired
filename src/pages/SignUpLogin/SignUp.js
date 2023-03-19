@@ -3,21 +3,25 @@ import { useNavigate } from "react-router-dom";
 import "./SignUpLogin.css"
 
 function SignUp() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   const [input, setInput] = useState({
     name: "",
     email: "",
     password: "",
   });
 
-  function Login() { 
+  function Login() {
     navigate("/Login");
-};
+  };
+
+  function homeButton() {
+    navigate('/');
+  }
 
   const handleSignup = (e) => {
     e.preventDefault();
-      localStorage.setItem("user", JSON.stringify(input));
-      navigate("/Login");
+    localStorage.setItem("user", JSON.stringify(input));
+    navigate("/Login");
   };
 
   return (
@@ -90,11 +94,17 @@ function SignUp() {
                   </div>
                 </form>
                 <div>
-                  <p className="mb-0  text-center">
+                <p className="mb-0  text-center">
                     Already have an account?
                     <button onClick={Login} className="text-primary fw-bold signup-login-box-btn">
-                      Login
+                      Log in
                     </button>
+                  </p>
+                  <p>
+                    <button className="text-primary fw-bold home-btn signup-login-box-btn" onClick={homeButton}>
+                      HOME PAGE
+                    </button>
+                    <br />
                   </p>
                 </div>
               </div>
