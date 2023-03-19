@@ -59,13 +59,13 @@ function RecipePage() {
   };
 
   function addToFavorites(recipe) {
-    const favorites = JSON.parse(localStorage.getItem('favorites')) || []; // retrieves the stored array from local storage or creates a new one if none exists
+    const favorites = JSON.parse(localStorage.getItem('favourites')) || []; // retrieves the stored array from local storage or creates a new one if none exists
     if (!favorites.some(favorite => favorite.id === recipe.id)) { //checks to see if the item is already in the favourites list and if not adds it
       favorites.push(recipe);
-      localStorage.setItem('favorites', JSON.stringify(favorites));
-      console.log(recipe.title + " stored to favorites");
+      localStorage.setItem('favourites', JSON.stringify(favorites));
+      console.log(recipe.title + " stored to favourites");
     } else {
-      console.log(recipe.title + " is already in favorites");
+      console.log(recipe.title + " is already in favourites");
     }
   }
 
