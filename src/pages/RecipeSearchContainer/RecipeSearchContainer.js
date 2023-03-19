@@ -43,6 +43,10 @@ function RecipeSearchContainer() {
     navigate('/');
   }
 
+  function favouritesButton() {
+    navigate('/Favourites');
+  }
+
   const searchRecipes = (query) => {
     SpoonacularAPI(query)
       .then((results) => {
@@ -89,6 +93,10 @@ function RecipeSearchContainer() {
 
           <button className="btn btn-home" onClick={homeButton}>
             HOME PAGE
+          </button>
+
+          <button className="btn btn-home" onClick={favouritesButton}>
+            FAVOURITES
           </button>
           <br />
         </div>

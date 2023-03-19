@@ -23,7 +23,7 @@ function Login() {
   const handleLogin = (e) => {
     e.preventDefault();
     const loggeduser = JSON.parse(localStorage.getItem("user"));
-    console.log(loggeduser);
+    // console.log(loggeduser);
     if (loggeduser === null) {
       alert("login information not found, please sign up")
     }
