@@ -11,16 +11,28 @@ function JumbotronImage() {
         case '/':
             jumbotronImage = screenshot;
             break;
+        case '/Login':
+            jumbotronImage = screenshot;
+            break;
+        case '/SignUp':
+            jumbotronImage = screenshot;
+            break;
         case '/RecipeSearchContainer':
             jumbotronImage = screenshot;
             break;
         case '/RecipeSearchGuest':
             jumbotronImage =  screenshot;
             break;
+        case '/Favourites':
+            jumbotronImage =  screenshot;
+            break;
          case '/RecipePage':
             jumbotronImage = individualRecipe.image;
             break;
         case '/RecipePageGuest':
+            jumbotronImage = individualRecipe.image;
+            break;
+        case '/FavouriteRecipePage':
             jumbotronImage = individualRecipe.image;
             break;
         default:

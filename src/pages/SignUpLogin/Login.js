@@ -96,7 +96,7 @@ function Login() {
                       onClick={Signup}
                       className="text-primary fw-bold signup-login-box-btn"
                     >
-                      Sign Up
+                      Register Here
                     </button>
                   </p>
                   <p>
