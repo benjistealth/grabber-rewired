@@ -12,6 +12,7 @@ import SignUp from "./pages/SignUpLogin/SignUp";
 import Login from "./pages/SignUpLogin/Login";
 import Home from "./pages/Home/Home";
 import Favourites from "./pages/Favourites/Favourites";
+import FavouriteRecipePage from "./pages/Favourites/FavouriteRecipePage";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
               <Route path="/RecipePageGuest" element={<RecipePageGuest />} />
               <Route path="/RecipeSearchGuest" element={<RecipeSearchGuest />} />
               <Route path="/Favourites" element={<Favourites />} />
+              <Route path="/FavouriteRecipePage" element={<FavouriteRecipePage />} />
             </Routes>
           </div>
         </Router>

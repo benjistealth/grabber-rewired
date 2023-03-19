@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import printJS from "print-js";
-import "./RecipePage.css";
+import "./FavouriteRecipePage.css";
 // import emailjs from '@emailjs/browser'; - uncomment this and below to enable email sending
 // commented to conserve email allowance for required tests
 
-function RecipePage() {
+function FavouriteRecipePage() {
   const navigate = useNavigate();
   const individualRecipe = JSON.parse(localStorage.getItem("individual-result"));
   const [servingSize, setServingSize] = useState(individualRecipe.servings);
   const recipeSteps = individualRecipe.analyzedInstructions[0].steps;
   const ingredients = individualRecipe.extendedIngredients;
   const GoBack = () => {
-    navigate("/RecipeSearchContainer");
+    navigate("/Favourites");
   };
 
   const caloricBreakdown = individualRecipe.nutrition.caloricBreakdown;
@@ -58,22 +58,6 @@ function RecipePage() {
 
   };
 
-  function addToFavourites(recipe) {
-    const favourites = JSON.parse(localStorage.getItem('favourites')) || []; // retrieves the stored array from local storage or creates a new one if none exists
-    if (!favourites.some(favourite => favourite.id === recipe.id)) { //checks to see if the item is already in the favourites list and if not adds it
-      favourites.push(recipe);
-      localStorage.setItem('favourites', JSON.stringify(favourites));
-      console.log(recipe.title + " stored to favourites");
-    } else {
-      console.log(recipe.title + " is already in favourites");
-    }
-  }
-
-  function setFavourite(e) {
-    e.preventDefault();
-    addToFavourites(individualRecipe);
-  };
-
   function handleSlider(e) {
     setServingSize(e.target.value);
   };
@@ -85,10 +69,6 @@ function RecipePage() {
         <div className="btn-box-bk">
           <button className="btn btn-back" onClick={GoBack}>
             Go Back
-          </button>
-          <br />
-          <button className="btn btn-back" onClick={setFavourite}>
-            Favourite 🤍
           </button>
           <br />
         </div>
@@ -153,4 +133,4 @@ function RecipePage() {
   );
 }
 
-export default RecipePage;
+export default FavouriteRecipePage;
