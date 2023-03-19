@@ -50,7 +50,7 @@ function Favourites() {
                                 id={result.id}
                                 name={result.title}
                                 image={result.image}
-                                // onClick={HandleCardClick}
+                                // onClick={() => navigate(`/RecipePage/${result.id}`)}
                             />
                         ))}
                     
