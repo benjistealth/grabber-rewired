@@ -62,7 +62,7 @@ function Login() {
                       className="form-control"
                       id="email"
                       placeholder="name@example.com"
-                      required="true"
+                      required={true}
                     />
                   </div>
                   <div className="mb-3">
@@ -80,7 +80,7 @@ function Login() {
                       id="password"
                       placeholder="*******"
                       autoComplete="on"
-                      required="true"
+                      required={true}
                     />
                   </div>
                   <div className="d-grid">

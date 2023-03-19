@@ -18,6 +18,7 @@ function RecipeSearchBar(props) {
                 placeholder="Search for a recipe..."
                 value={props.value}
                 onChange={props.onChange}
+                autoComplete="on"
               />
               <span className="icon is-small is-left">
                 <i className="fa fa-search"></i>
