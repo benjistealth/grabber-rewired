@@ -8,13 +8,12 @@ import "./RecipePage.css";
 function RecipePage() {
   const navigate = useNavigate();
   const individualRecipe = JSON.parse(localStorage.getItem("individual-result"));
-  const [servingSize, setServingSize] = useState(individualRecipe.servings)
-
+  const [servingSize, setServingSize] = useState(individualRecipe.servings);
   const recipeSteps = individualRecipe.analyzedInstructions[0].steps;
   const ingredients = individualRecipe.extendedIngredients;
   const GoBack = () => {
     navigate("/RecipeSearchContainer");
-  }
+  };
 
   const caloricBreakdown = individualRecipe.nutrition.caloricBreakdown;
 
@@ -23,7 +22,7 @@ function RecipePage() {
       printable: "printRecipe",
       type: "html"
     });
-  }
+  };
 
   const EmailRecipe = (e) => {
     e.preventDefault();
@@ -57,11 +56,27 @@ function RecipePage() {
     //     alert("Email send error.....💩")
     //   });
 
+  };
+
+  function addToFavorites(recipe) {
+    const favorites = JSON.parse(localStorage.getItem('favorites')) || []; // retrieves the stored array from local storage or creates a new one if none exists
+    if (!favorites.some(favorite => favorite.id === recipe.id)) { //checks to see if the item is already in the favourites list and if not adds it
+      favorites.push(recipe);
+      localStorage.setItem('favorites', JSON.stringify(favorites));
+      console.log(recipe.title + " stored to favorites");
+    } else {
+      console.log(recipe.title + " is already in favorites");
+    }
   }
+
+  function setFavourite(e) {
+    e.preventDefault();
+    addToFavorites(individualRecipe);
+  };
 
   function handleSlider(e) {
     setServingSize(e.target.value);
-  }
+  };
 
   return (
     <div className="container maincontainer">
@@ -70,6 +85,10 @@ function RecipePage() {
         <div className="btn-box-bk">
           <button className="btn btn-back" onClick={GoBack}>
             Go Back
+          </button>
+          <br />
+          <button className="btn btn-back" onClick={setFavourite}>
+            Favourite 🤍
           </button>
           <br />
         </div>
@@ -104,9 +123,8 @@ function RecipePage() {
           <div className="col-lg-6 col-md-4 col-sm-4 ms-3 mt-5 mb-5 instructionscontainer">
             <h1 className="titleHeader">Instructions</h1>
             {recipeSteps.map((recipeStep, index) => (
-              <p className="instructions mt-2" key={index}>{`${index + 1}.)  ${
-                recipeStep.step
-              }`}</p>
+              <p className="instructions mt-2" key={index}>{`${index + 1}.)  ${recipeStep.step
+                }`}</p>
             ))}
           </div>
           <div className="col-md-3 col-sm-3 ms-4 mt-5 mb-5 ingredientscontainer">
@@ -122,13 +140,11 @@ function RecipePage() {
               onChange={handleSlider}
             ></input>
             {ingredients.map((ingredient, index) => (
-              <p className="ingredients mt-2" key={index}>{`${
-                index + 1
-              }.) ${(ingredient.amount =
-                ingredient.amount *
-                (servingSize / individualRecipe.servings)).toFixed(1)} ${
-                ingredient.unit
-              } ${ingredient.name}`}</p>
+              <p className="ingredients mt-2" key={index}>{`${index + 1
+                }.) ${(ingredient.amount =
+                  ingredient.amount *
+                  (servingSize / individualRecipe.servings)).toFixed(1)} ${ingredient.unit
+                } ${ingredient.name}`}</p>
             ))}
           </div>
         </div>

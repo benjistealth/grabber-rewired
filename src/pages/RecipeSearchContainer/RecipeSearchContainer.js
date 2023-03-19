@@ -14,6 +14,7 @@ function RecipeSearchContainer() {
   const [search, setSearch] = useState("");
   const [unsplashImage, setBackgroundImg] = useState(localStorage.getItem('unsplashImage')); // draws background image from local storage
   const navigate = useNavigate();
+  
   function handleChange(e) {
     setSearch(e.target.value);
   }
