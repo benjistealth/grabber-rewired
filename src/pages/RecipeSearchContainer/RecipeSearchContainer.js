@@ -78,8 +78,17 @@ function RecipeSearchContainer() {
           value={search}
           onClick={handleFormSubmit}
         />
-        <button onClick={testingButton}>TESTING PAGE</button>
-        <button onClick={homeButton}>HOME PAGE</button>
+
+        <div className="btn-box-home container">
+          <button className="btn btn-home" onClick={testingButton}>
+            TESTING PAGE
+          </button>
+
+          <button className="btn btn-home" onClick={homeButton}>
+            HOME PAGE
+          </button>
+          <br />
+        </div>
 
         <div className="container">
           <Wrapper>
