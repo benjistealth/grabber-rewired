@@ -1,3 +1,8 @@
 #signupcard, #logincard {
   width: 100% !important;
 }
+
+.signup-login-box-btn {
+  border-color: transparent;
+  background: transparent;
+}

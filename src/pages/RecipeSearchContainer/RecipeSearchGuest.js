@@ -67,15 +67,19 @@ function RecipeSearchGuest() {
   }
 
   return (
-    <div style={backgroundStyle} className="cardContainer">
+    <div style={backgroundStyle} className="container cardContainer">
       <div className="container">
         <RecipeSearchBar
           onChange={handleChange}
           value={search}
           onClick={handleFormSubmit}
         />
-        <button className="btn-home" onClick={homeButton}>HOME PAGE</button>
-
+        <div className="btn-box-home container">
+          <button className="btn btn-home" onClick={homeButton}>
+            HOME PAGE
+          </button>
+          <br />
+        </div>
         <div className="container">
           <Wrapper>
             {spoonacularResults.map((result) => (
