@@ -10,16 +10,28 @@ function JumbotronTitle() {
         case '/':
             jumbotronTitle = "<Grabber Rewired />";
             break;
+        case '/Login':
+            jumbotronTitle = "<Grabber Rewired /> Login";
+            break;
+        case '/SignUp':
+            jumbotronTitle = "<Grabber Rewired /> Register";
+            break;
         case '/RecipeSearchContainer':
             jumbotronTitle = "Recipe Search";
             break;
         case '/RecipeSearchGuest':
             jumbotronTitle = "Recipe Search";
             break;
-         case '/RecipePage':
+        case '/Favorites':
+            jumbotronTitle = "Favourite Recipes";
+            break;
+        case '/RecipePage':
             jumbotronTitle = individualRecipe.title;
             break;
         case '/RecipePageGuest':
+            jumbotronTitle = individualRecipe.title;
+            break;
+        case '/FavouriteRecipePage':
             jumbotronTitle = individualRecipe.title;
             break;
         default:
