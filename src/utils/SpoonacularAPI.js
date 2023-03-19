@@ -14,7 +14,7 @@ function SpoonacularAPI(query) {
       return response.data.results;
      })
     .catch((err) => {
-      throw err
+      // throw err - Swallow errors :-D
     })
 }
 
