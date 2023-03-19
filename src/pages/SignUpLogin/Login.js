@@ -24,7 +24,10 @@ function Login() {
     e.preventDefault();
     const loggeduser = JSON.parse(localStorage.getItem("user"));
     console.log(loggeduser);
-    if (input.email === loggeduser.email && input.password === loggeduser.password) {
+    if (loggeduser === null) {
+      alert("login information not found, please sign up")
+    }
+    else if (input.email === loggeduser.email && input.password === loggeduser.password) {
       localStorage.setItem("loggedin", true);
       navigate("/RecipeSearchContainer");
     }
