@@ -9,7 +9,7 @@ import "./RecipeSearchContainer.css";
 
 
 function RecipeSearchContainer() {
-  const storedResults = JSON.parse(localStorage.getItem('recipe-results')) || []; // checks for stored data or uses empty array if none found
+  const storedResults = JSON.parse(localStorage.getItem('recipe-results'));
   const [spoonacularResults, setSpoonacularResults] = useState(storedResults);
   const [search, setSearch] = useState("");
   const [unsplashImage, setBackgroundImg] = useState(localStorage.getItem('unsplashImage')); // draws background image from local storage
