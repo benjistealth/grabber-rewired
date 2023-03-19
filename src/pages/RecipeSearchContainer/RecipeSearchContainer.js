@@ -14,7 +14,7 @@ function RecipeSearchContainer() {
   const [search, setSearch] = useState("");
   const [unsplashImage, setBackgroundImg] = useState(localStorage.getItem('unsplashImage')); // draws background image from local storage
   const navigate = useNavigate();
-  
+
   function handleChange(e) {
     setSearch(e.target.value);
   }
@@ -46,8 +46,10 @@ function RecipeSearchContainer() {
   const searchRecipes = (query) => {
     SpoonacularAPI(query)
       .then((results) => {
-        setSpoonacularResults(results);
-        localStorage.setItem('recipe-results', JSON.stringify(results)); // save new results to local storage
+        if (results != null) {
+          setSpoonacularResults(results);
+          localStorage.setItem('recipe-results', JSON.stringify(results)); // save new results to local storage
+        }
       })
       .catch((err) => {
         throw err;

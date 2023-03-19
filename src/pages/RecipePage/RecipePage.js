@@ -38,7 +38,7 @@ function RecipePage() {
     var templateParams = {
       user_name: user_name,
       user_email: user_email,
-      my_html: emailData
+      message: emailData
     };
 
     //                                                                                        //
