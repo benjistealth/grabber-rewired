@@ -18,6 +18,6 @@ html,
 }
 
 .mainbody{
-  height: 120vh;
+  height: calc(120vh + 400px);
 }
 

@@ -1,6 +1,6 @@
 import "./App.css";
 // import Nav from "./components/home/Nav"; - might not need this
-import Jumbotron from "./components/HomeComponents/Jumbotron";
+import Jumbotron from "./components/HomeComponents/Jumbotron/Jumbotron"
 import RecipeSearchContainer from "./pages/RecipeSearchContainer/RecipeSearchContainer";
 import RecipeSearchGuest from "./pages/RecipeSearchContainer/RecipeSearchGuest";
 import Footer from "./components/HomeComponents/Footer";
@@ -18,10 +18,12 @@ function App() {
     <div className="App" data-test="component-app">
       <header>
         {/* <Nav /> */}
-        <Jumbotron />
+        
       </header>
       <main className="mainbody pt-4">
+        
         <Router>
+          <Jumbotron />
           <div>
             <Routes>
               <Route path="/" element={<Home />} />

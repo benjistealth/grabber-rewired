@@ -104,7 +104,7 @@ function RecipePage() {
         </div>
       </div>
       <div className="recipe" id="printRecipe">
-        <h1 className="foodTitle">{individualRecipe.title}</h1>
+        {/* <h1 className="foodTitle">{individualRecipe.title}</h1>
         <br />
         <div className="imageContainer">
           <img
@@ -112,7 +112,7 @@ function RecipePage() {
             alt={individualRecipe.title}
             className="selectedImage"
           />
-        </div>
+        </div> */}
         <div className="container infocontainer">
           <div className="col-md-2 ms-3 mt-5 mb-5 instructionscontainer">
             <h1 className="titleHeader">Nutrition</h1>
