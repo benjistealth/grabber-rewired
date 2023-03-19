@@ -52,6 +52,7 @@ function SignUp() {
                       className="form-control"
                       id="name"
                       placeholder="John Smith"
+                      required="true"
                     />
                   </div>
                   <div className="mb-3">
@@ -68,6 +69,7 @@ function SignUp() {
                       className="form-control"
                       id="email"
                       placeholder="name@example.com"
+                      required="true"
                     />
                   </div>
                   <div className="mb-3">
@@ -85,6 +87,7 @@ function SignUp() {
                       id="password"
                       placeholder="*******"
                       autoComplete="on"
+                      required="true"
                     />
                   </div>
                   <div className="d-grid">
@@ -94,14 +97,20 @@ function SignUp() {
                   </div>
                 </form>
                 <div>
-                <p className="mb-0  text-center">
+                  <p className="mb-0  text-center">
                     Already have an account?
-                    <button onClick={Login} className="text-primary fw-bold signup-login-box-btn">
+                    <button
+                      onClick={Login}
+                      className="text-primary fw-bold signup-login-box-btn"
+                    >
                       Log in
                     </button>
                   </p>
                   <p>
-                    <button className="text-primary fw-bold home-btn signup-login-box-btn" onClick={homeButton}>
+                    <button
+                      className="text-primary fw-bold home-btn signup-login-box-btn"
+                      onClick={homeButton}
+                    >
                       HOME PAGE
                     </button>
                     <br />
