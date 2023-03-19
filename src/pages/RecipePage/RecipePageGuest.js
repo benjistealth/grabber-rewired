@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate } from 'react-router-dom';
-// import Nutrition from "../components/home/Nutrition";
-import "../css/RecipePage.css";
+import "./RecipePage.css";
 
 function RecipePageGuest() {
   const navigate = useNavigate();

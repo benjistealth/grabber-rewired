@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import SpoonacularAPI from "../utils/SpoonacularAPI";
-import RecipeSearchBar from "../components/home/RecipeSearchBar";
-import RecipeCardDisplay from "../components/home/RecipeCardDisplay";
-import Wrapper from "../components/home/Wrapper";
-import UnsplashAPI from "../utils/unsplashAPI";
-import "../css/RecipeSearchContainer.css";
+import SpoonacularAPI from "../../utils/SpoonacularAPI";
+import RecipeSearchBar from "../../components/HomeComponents/RecipeSearchBar";
+import RecipeCardDisplay from "../../components/HomeComponents/RecipeCardDisplay";
+import Wrapper from "../../components/HomeComponents/Wrapper";
+import UnsplashAPI from "../../utils/unsplashAPI";
+import "./RecipeSearchContainer.css";
 
 
-function RecipeSearchGuest() {
+function RecipeSearchContainer() {
   const storedResults = JSON.parse(localStorage.getItem('recipe-results')) || []; // checks for stored data or uses empty array if none found
   const [spoonacularResults, setSpoonacularResults] = useState(storedResults);
   const [search, setSearch] = useState("");
@@ -31,8 +31,12 @@ function RecipeSearchGuest() {
         localStorage.setItem('individual-result', JSON.stringify(spoonacularResults[i]));
       }
     }
-    navigate("/RecipePageGuest");
+    navigate("/RecipePage");
   };
+
+  function testingButton() {
+    navigate('/Testing');
+  }
 
   function homeButton() {
     navigate('/');
@@ -74,6 +78,7 @@ function RecipeSearchGuest() {
           value={search}
           onClick={handleFormSubmit}
         />
+        <button onClick={testingButton}>TESTING PAGE</button>
         <button onClick={homeButton}>HOME PAGE</button>
 
         <div className="container">
@@ -94,7 +99,7 @@ function RecipeSearchGuest() {
   );
 }
 
-export default RecipeSearchGuest;
+export default RecipeSearchContainer;
 
 
 // cards clickable. event handlers DONE

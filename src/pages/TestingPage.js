@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 function TestingPage() {
+  const navigate = useNavigate();
   const [isGlutenFree, setIsGlutenFree] = useState(true);
   const [isVegan, setIsVegan] = useState(true);
   const [isVegetarian, setIsVegetarian] = useState(true);
@@ -9,7 +11,11 @@ function TestingPage() {
   const [recipeArrayGF, setRecipeArraGF] = useState([]);
   const [recipeArrayV, setRecipeArrayV] = useState([]);
   const [recipeArrayVEG, setRecipeArrayVEG] = useState([]);
-  
+
+  const GoBack = () => {
+    navigate("/RecipeSearchContainer");
+  }
+
   function handleGlutenFreeCheck() {
     isGlutenFree === false ? setIsGlutenFree(true) : setIsGlutenFree(false);
     recipesJSON.forEach((recipe) => {
@@ -57,6 +63,10 @@ function TestingPage() {
 
   return (
     <div>
+      <button className="btn btn-back" onClick={GoBack}>
+        Go Back
+      </button>
+      <br />
       <h1>GLUTEN FREE | VEGAN | VEGETARIAN</h1>
       <div className="form-check">
         <input

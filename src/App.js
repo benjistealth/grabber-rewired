@@ -1,22 +1,22 @@
 import "./App.css";
-import Nav from "./components/home/Nav";
-import Jumbotron from "./components/home/Jumbotron";
-import RecipeSearchContainer from "./pages/RecipeSearchContainer";
-import RecipeSearchGuest from "./pages/RecipeSearchGuest";
-import Footer from "./components/home/Footer";
+// import Nav from "./components/home/Nav"; - might not need this
+import Jumbotron from "./components/HomeComponents/Jumbotron";
+import RecipeSearchContainer from "./pages/RecipeSearchContainer/RecipeSearchContainer";
+import RecipeSearchGuest from "./pages/RecipeSearchContainer/RecipeSearchGuest";
+import Footer from "./components/HomeComponents/Footer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import RecipePage from "./pages/RecipePage";
-import RecipePageGuest from "./pages/RecipePageGuest";
+import RecipePage from "./pages/RecipePage/RecipePage";
+import RecipePageGuest from "./pages/RecipePage/RecipePageGuest";
 import TestingPage from "./pages/TestingPage";
-import SignUp from "./pages/SignUp";
-import Login from "./pages/Login";
-import Home from "./pages/Home";
+import SignUp from "./pages/SignUpLogin/SignUp";
+import Login from "./pages/SignUpLogin/Login";
+import Home from "./pages/Home/Home";
 
 function App() {
   return (
     <div className="App" data-test="component-app">
       <header>
-        <Nav />
+        {/* <Nav /> */}
         <Jumbotron />
       </header>
       <main className="mainbody pt-4">

@@ -1,4 +1,4 @@
-import "../../css/card.css"
+import "./card.css"
 
 function RecipeCardDisplay(props) {
   return (

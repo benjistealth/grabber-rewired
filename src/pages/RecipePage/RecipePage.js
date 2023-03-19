@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import printJS from "print-js";
-// import Nutrition from "../components/home/Nutrition";
-import "../css/RecipePage.css";
-// import emailjs from '@emailjs/browser';
+import "./RecipePage.css";
+// import emailjs from '@emailjs/browser'; - uncomment this and below to enable email sending
+// commented to conserve email allowance for required tests
 
 function RecipePage() {
   const navigate = useNavigate();
@@ -64,12 +64,16 @@ function RecipePage() {
   }
 
   return (
-    <div className="maincontainer">
+    <div className="container maincontainer">
       {/* <button className="btn btn-back" onClick={handleClick}>Nutrition</button> */}
+      <div className="btn-box">
+      <div className="btn-box-bk">
       <button className="btn btn-back" onClick={GoBack}>
         Go Back
       </button>
       <br />
+      </div>
+      <div className="btn-box-util">
       <button className="btn btn-print" onClick={printRecipe}>
         Print Recipe
       </button>
@@ -78,6 +82,8 @@ function RecipePage() {
         Email yourself THIS recipe
       </button>
       <br />
+      </div>
+      </div>
       <div className="recipe" id="printRecipe">
         <h1 className="foodTitle">{individualRecipe.title}</h1>
         <br />

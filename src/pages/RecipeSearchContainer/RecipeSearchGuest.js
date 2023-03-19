@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import SpoonacularAPI from "../utils/SpoonacularAPI";
-import RecipeSearchBar from "../components/home/RecipeSearchBar";
-import RecipeCardDisplay from "../components/home/RecipeCardDisplay";
-import Wrapper from "../components/home/Wrapper";
-import UnsplashAPI from "../utils/unsplashAPI";
-import "../css/RecipeSearchContainer.css";
+import SpoonacularAPI from "../../utils/SpoonacularAPI";
+import RecipeSearchBar from "../../components/HomeComponents/RecipeSearchBar";
+import RecipeCardDisplay from "../../components/HomeComponents/RecipeCardDisplay";
+import Wrapper from "../../components/HomeComponents/Wrapper";
+import UnsplashAPI from "../../utils/unsplashAPI";
+import "./RecipeSearchContainer.css";
 
 
-function RecipeSearchContainer() {
+function RecipeSearchGuest() {
   const storedResults = JSON.parse(localStorage.getItem('recipe-results')) || []; // checks for stored data or uses empty array if none found
   const [spoonacularResults, setSpoonacularResults] = useState(storedResults);
   const [search, setSearch] = useState("");
@@ -31,12 +31,8 @@ function RecipeSearchContainer() {
         localStorage.setItem('individual-result', JSON.stringify(spoonacularResults[i]));
       }
     }
-    navigate("/RecipePage");
+    navigate("/RecipePageGuest");
   };
-
-  function testingButton() {
-    navigate('/Testing');
-  }
 
   function homeButton() {
     navigate('/');
@@ -78,7 +74,6 @@ function RecipeSearchContainer() {
           value={search}
           onClick={handleFormSubmit}
         />
-        <button onClick={testingButton}>TESTING PAGE</button>
         <button onClick={homeButton}>HOME PAGE</button>
 
         <div className="container">
@@ -99,7 +94,7 @@ function RecipeSearchContainer() {
   );
 }
 
-export default RecipeSearchContainer;
+export default RecipeSearchGuest;
 
 
 // cards clickable. event handlers DONE
@@ -112,6 +107,10 @@ export default RecipeSearchContainer;
 
 // react router new page will have buttons. event handlers needed for those DONE
 
-// Ben, working on send email function & clean up file structure
+// Ben, working on send email function & clean up file structure - DONE
 
-// Toby, working on nutritional info
+// Toby, working on nutritional info - DONE
+
+// Leanne, working on readme & presentation
+
+// Shane, working on print to pdf & limit guest user access - DONE

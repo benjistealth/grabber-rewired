@@ -24,14 +24,13 @@ function Home() {
                 </p>
                 <h3 className="is-size-3 py-2">Stacked with new features:</h3>
                 <ul className="is-size-4">
-                    <li>User Login</li>
-                    <li>Send recipe to other registered users</li>
-                    <li>Email recipe</li>
+                    <li>User Signup/Login</li>
+                    <li>Guest login with limited features</li>
+                    <li>Print recipe info</li>
+                    <li>Email recipe info</li>
                     <li>New chosen recipe pages</li>
                     <li>Generated in React for responsive performance </li>
                 </ul>
-
-
             </div>
             
 
