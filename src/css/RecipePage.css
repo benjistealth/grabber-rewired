@@ -1,4 +1,6 @@
-.btn-back, .btn-print {
+.btn-back,
+.btn-print,
+.btn-email {
     border: .5px solid white !important;
     color: white !important;
     margin: 5px;

@@ -1,8 +1,9 @@
-import React, { useState }  from "react";
+import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import printJS from "print-js";
 // import Nutrition from "../components/home/Nutrition";
 import "../css/RecipePage.css";
+// import emailjs from '@emailjs/browser';
 
 function RecipePage() {
   const navigate = useNavigate();
@@ -24,6 +25,40 @@ function RecipePage() {
     });
   }
 
+  const EmailRecipe = (e) => {
+    e.preventDefault();
+
+    const loggeduser = JSON.parse(localStorage.getItem("user"));
+    const user_name = loggeduser.name;
+    const user_email = loggeduser.email;
+
+    let emailData = individualRecipe.title + "\n";
+    emailData += individualRecipe.sourceUrl + "\n";
+    emailData += individualRecipe.summary + "\n";
+
+    var templateParams = {
+      user_name: user_name,
+      user_email: user_email,
+      my_html: emailData
+    };
+
+    //                                                                                        //
+    // leaving the email sending commented out as I used 25% of monthly allowance already :-) //
+    //                                                                                        //
+    console.log(templateParams); // test email send button to browser console
+
+    // emailjs.send(serviceID, templateID, templateParams, publicKey)
+    // emailjs.send('service_4kxk2ps', 'template_qgabn5g', templateParams, 'NyspTPaNNuHG_EVwK')
+    //   .then(function (response) {
+    //     // console.log('SUCCESS!', response.status, response.text);
+    //     alert("Email Sent.....😍")
+    //   }, function (error) {
+    //     console.log('FAILED...', error);
+    //     alert("Email send error.....💩")
+    //   });
+
+  }
+
   function handleSlider(e) {
     setServingSize(e.target.value);
   }
@@ -39,6 +74,10 @@ function RecipePage() {
         Print Recipe
       </button>
       <br />
+      <button className="btn btn-email" onClick={EmailRecipe}>
+        Email yourself THIS recipe
+      </button>
+      <br />
       <div className="recipe" id="printRecipe">
         <h1 className="foodTitle">{individualRecipe.title}</h1>
         <br />
@@ -52,17 +91,16 @@ function RecipePage() {
         <div className="container infocontainer">
           <div className="col-md-2 ms-4 mt-5 mb-5 instructionscontainer">
             <h1 className="titleHeader">Nutrition</h1>
-              <p>{`Carbs: ${caloricBreakdown.percentCarbs}%`}</p>
-              <p>{`Fat: ${caloricBreakdown.percentFat}%`}</p>
-              <p>{`Protein: ${caloricBreakdown.percentProtein}%`}</p>
-          
+            <p>{`Carbs: ${caloricBreakdown.percentCarbs}%`}</p>
+            <p>{`Fat: ${caloricBreakdown.percentFat}%`}</p>
+            <p>{`Protein: ${caloricBreakdown.percentProtein}%`}</p>
+
           </div>
           <div className="col-md-6 ms-4 mt-5 mb-5 instructionscontainer">
             <h1 className="titleHeader">Instructions</h1>
             {recipeSteps.map((recipeStep, index) => (
-              <p className="instructions mt-2" key={index}>{`${index + 1}.)  ${
-                recipeStep.step
-              }`}</p>
+              <p className="instructions mt-2" key={index}>{`${index + 1}.)  ${recipeStep.step
+                }`}</p>
             ))}
           </div>
           <div className="col-md-3 ms-5 mt-5 mb-5 ingredientscontainer">
@@ -70,9 +108,8 @@ function RecipePage() {
             <label htmlFor="customRange2">{`Serving size: ${servingSize}`}</label>
             <input type="range" className="custom-range" min="1" max="20" id="customRange2" value={servingSize} onChange={handleSlider}></input>
             {ingredients.map((ingredient, index) => (
-              <p className="ingredients mt-2" key={index}>{`${index + 1}.) ${
-                (ingredient.amount = ingredient.amount * (servingSize / individualRecipe.servings)).toFixed(1)
-              } ${ingredient.unit} ${ingredient.name}`}</p>
+              <p className="ingredients mt-2" key={index}>{`${index + 1}.) ${(ingredient.amount = ingredient.amount * (servingSize / individualRecipe.servings)).toFixed(1)
+                } ${ingredient.unit} ${ingredient.name}`}</p>
             ))}
           </div>
         </div>
