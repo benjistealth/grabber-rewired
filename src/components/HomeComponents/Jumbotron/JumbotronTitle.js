@@ -44,7 +44,8 @@ function JumbotronTitle() {
         top: '40%',
         left: '10%',
         height: '20%',
-        width: '50%'
+        width: '50%',
+        fontSize: 'clamp(16px, 5vw, 60px)'
     }
 
     return(
