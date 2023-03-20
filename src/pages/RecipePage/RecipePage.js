@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import printJS from "print-js";
-import "./RecipePage.css";
+import "./RecipePageGuest.css";
 // import emailjs from '@emailjs/browser'; - uncomment this and below to enable email sending
 // commented to conserve email allowance for required tests
 
@@ -79,12 +79,12 @@ function RecipePage() {
   };
 
   return (
-    <div className="container maincontainer">
+    <div className=" maincontainer">
       {/* <button className="btn btn-back" onClick={handleClick}>Nutrition</button> */}
       <div className="btn-box">
         <div className="btn-box-bk">
           <button className="btn btn-back" onClick={GoBack}>
-            Go Back
+            <p>Go Back</p>
           </button>
           <br />
           <button className="btn btn-back" onClick={setFavourite}>
@@ -104,15 +104,6 @@ function RecipePage() {
         </div>
       </div>
       <div className="recipe" id="printRecipe">
-        {/* <h1 className="foodTitle">{individualRecipe.title}</h1>
-        <br />
-        <div className="imageContainer">
-          <img
-            src={individualRecipe.image}
-            alt={individualRecipe.title}
-            className="selectedImage"
-          />
-        </div> */}
         <div className="container infocontainer">
           <div className="col-md-2 ms-3 mt-5 mb-5 instructionscontainer">
             <h1 className="titleHeader">Nutrition</h1>
@@ -120,7 +111,7 @@ function RecipePage() {
             <p>{`Fat: ${caloricBreakdown.percentFat}%`}</p>
             <p>{`Protein: ${caloricBreakdown.percentProtein}%`}</p>
           </div>
-          <div className="col-lg-6 col-md-4 col-sm-4 ms-3 mt-5 mb-5 instructionscontainer">
+          <div className="col-lg-7 col-md-4 col-sm-4 ms-3 mt-5 mb-5 instructionscontainer">
             <h1 className="titleHeader">Instructions</h1>
             {recipeSteps.map((recipeStep, index) => (
               <p className="instructions mt-2" key={index}>{`${index + 1}.)  ${recipeStep.step

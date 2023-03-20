@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     max-height: 100vh;
-    background: black;
+    /* background: black; */
     padding: 0;
     margin: 0;
 }
@@ -33,15 +33,14 @@
 .btn-print,
 .btn-email {
     /* display: flex; */
-    border: .5px solid white !important;
-    color: white !important;
+    /* border: .5px solid  !important; */
     margin: 5px;
     width: 10rem;
+
+    
 }
 
-.btn-back {
-    /* justify-content: flex-start; */
-}
+
 
 .foodTitle {
     text-align: center;
@@ -58,7 +57,7 @@
 
 .infocontainer {
     display: flex;
-    background-color: white;
+    /* background-color: white; */
     border-radius: 10px;
 }
 
@@ -72,9 +71,9 @@
     width: 80%;
 }
 
-.recipe {
+/* .recipe {
     background: black;
-}
+} */
 
 @media screen and (max-width: 1216px) {
   body {

@@ -1,5 +1,6 @@
 import JumbotronTitle from "./JumbotronTitle";
 import JumbotronImage from "./JumbotronImage";
+import Toggle from "./Toggle";
 import "./Jumbotron.css"
 
 function Jumbotron() {
@@ -9,6 +10,7 @@ function Jumbotron() {
       <div className="hero-body">
         <JumbotronImage />
         <JumbotronTitle />
+        <Toggle />
       </div>
     </section>
   );

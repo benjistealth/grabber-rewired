@@ -1,3 +1,115 @@
-html, body {
-    height: 100vh;
+:root {
+  --primary-blue: rgb(0, 0, 255);
+  --secondary-blue: rgb(96, 96, 182);
+
+  --text-primary-light: #1c1c1c;
+  --text-primary-dark: #faf9f6;
+
+  --text-secondary-light: rgb(70, 70, 70);
+  --text-secondary-dark: rgb(160, 160, 160);
+
+  --bg-primary-light: #faf9f6;
+  --bg-primary-dark: #1c1c1c;
+
+  --bg-secondary-light: rgb(212, 212, 212);
+  --bg-secondary-dark: rgb(34, 34, 34);
+
+  --bg-jumbotron-light: rgb(104, 104, 255);
+  --bg-jumbotron-dark: rgb(29, 29, 58);
+
+  --bg-footer-light: rgb(104, 104, 255);
+  --bg-footer-dark: rgb(29, 29, 58);
+
+  --comp-button-light: #1c1c1c;
+  --comp-button-dark: #faf9f6;
+}
+
+.light-theme {
+  --text-primary: var(--text-primary-light);
+  --text-secondary: var(--text-secondary-light);
+  --bg-primary: var(--bg-primary-light);
+  --bg-secondary: var(--bg-secondary-light);
+  --bg-jumbotron: var(--bg-jumbotron-light);
+  --comp-button: var(--comp-button-light);
+  --bg-footer: var(--bg-footer-light);
+}
+
+.dark-theme {
+  --text-primary: var(--text-primary-dark);
+  --text-secondary: var(--text-secondary-dark);
+  --bg-primary: var(--bg-primary-dark);
+  --bg-secondary: var(--bg-secondary-dark);
+  --bg-jumbotron: var(--bg-jumbotron-dark);
+  --comp-button: var(--comp-button-dark);
+  --bg-footer: var(--bg-footer-dark);
+}
+
+html,
+body {
+  height: 100vh;
+}
+
+.mainbody {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+strong,
+label {
+  color: var(--text-primary) !important;
+}
+
+button {
+    color: var(--text-primary) !important;
+    background-color: var(--bg-primary) !important;
+    border-color: var(--comp-button) !important;
+}
+
+/* .btn {
+    background-color: yellow !important;
+    border-color: blue !important;
+
+} */
+
+.hero-body {
+  background-color: var(--bg-jumbotron);
+}
+
+.footer-div {
+  background-color: var(--bg-footer);
+}
+
+.card {
+    background-color: var(--bg-primary) !important;;
+}
+
+#search-text, #search-button {
+    background-color: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+}
+
+::placeholder, span {
+    color: var(--text-secondary) !important
+}
+
+.maincontainer, .recipe {
+    background-color: var(--bg-primary) !important;
+}
+
+
+
+.infocontainer {
+    background-color: var(--bg-secondary) !important;
+}
+
+#logincard, #signupcard {
+    border-color: var(--text-primary) !important;
 }
