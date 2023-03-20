@@ -5,6 +5,8 @@ import RecipeSearchContainer from "./pages/RecipeSearchContainer/RecipeSearchCon
 import RecipeSearchGuest from "./pages/RecipeSearchContainer/RecipeSearchGuest";
 import Footer from "./components/HomeComponents/Footer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { ThemeContext } from "./Theme/Theme";
+import { useContext } from "react";
 import RecipePage from "./pages/RecipePage/RecipePage";
 import RecipePageGuest from "./pages/RecipePage/RecipePageGuest";
 import TestingPage from "./pages/TestingPage";
@@ -15,8 +17,10 @@ import Favourites from "./pages/Favourites/Favourites";
 import FavouriteRecipePage from "./pages/Favourites/FavouriteRecipePage";
 
 function App() {
+  const { theme } = useContext(ThemeContext)
   return (
-    <div className="App" data-test="component-app">
+    <div className={`App ${theme}`} data-test="component-app">
+
       <header>
         {/* <Nav /> */}
         

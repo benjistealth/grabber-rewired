@@ -44,7 +44,7 @@ function RecipePageGuest() {
             {ingredients.map((ingredient, index) => (
               <p className="ingredients mt-2" key={index}>{`${index + 1}.) ${
                 ingredient.amount
-              }${ingredient.unit} ${ingredient.name}`}</p>
+              } ${ingredient.unit} ${ingredient.name}`}</p>
             ))}
           </div>
         </div>

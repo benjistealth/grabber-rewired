@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import spoonacularJSON from "../../utils/spoonacularJSON.json";
-
 // on app load, check local storage for user search data
 // if we dont have any user searches saved, load JSON into local storage as starting data - note 27 recipes in this lump
 if(localStorage.getItem('recipe-results') === null) {localStorage.setItem('recipe-results', JSON.stringify(spoonacularJSON));}

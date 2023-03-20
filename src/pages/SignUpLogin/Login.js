@@ -41,7 +41,7 @@ function Login() {
       <div className="container">
         <div className="row d-flex justify-content-center">
           <div className="col-12 col-md-8 col-lg-6">
-            <div className="card bg-white shadow-lg" id="logincard">
+            <div className="card  shadow-lg" id="logincard">
               <div className="card-body p-5">
                 <form className="mb-3 mt-md-4" onSubmit={handleLogin}>
                   <h2 className="fw-bold mb-2 text-uppercase ">
@@ -94,14 +94,14 @@ function Login() {
                     Don't have an account?
                     <button
                       onClick={Signup}
-                      className="text-primary fw-bold signup-login-box-btn"
+                      className="fw-bold signup-login-box-btn"
                     >
                       Register Here
                     </button>
                   </p>
                   <p>
                     <button
-                      className="text-primary fw-bold home-btn signup-login-box-btn"
+                      className="signup-login-box-btn"
                       onClick={homeButton}
                     >
                       HOME PAGE

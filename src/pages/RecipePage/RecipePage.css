@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     max-height: 100vh;
-    background: black;
+    /* background: black; */
     padding: 0;
     margin: 0;
 }
@@ -33,8 +33,7 @@
 .btn-print,
 .btn-email {
     /* display: flex; */
-    border: .5px solid white !important;
-    color: white !important;
+    /* border: .5px solid white !important; */
     margin: 5px;
     width: 10rem;
 }
@@ -54,23 +53,22 @@
 
 .infocontainer {
     display: flex;
-    background-color: white;
     border-radius: 10px;
 }
 
 .titleHeader {
     font-size: 30px;
     font-weight: bold;
-    text-align: center;
+    text-align: left !important;
 }
 
 .custom-range {
     width: 80%;
 }
 
-.recipe {
+/* .recipe {
     background: black;
-}
+} */
 
 @media screen and (max-width: 1216px) {
   body {
