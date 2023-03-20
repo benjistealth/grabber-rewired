@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import SpoonacularAPI from "../../utils/SpoonacularAPI";
 import RecipeSearchBar from "../../components/HomeComponents/RecipeSearchBar";
@@ -48,6 +48,16 @@ function RecipeSearchContainer() {
     navigate('/Favourites');
   }
 
+  
+  const [disabled, setDisabled] = useState(true);
+
+  useEffect(() => {
+    const favouritesExists = localStorage.getItem('favourites');
+    if (favouritesExists) {
+      setDisabled(false);
+    }
+  }, []);
+
   const searchRecipes = (query) => {
     SpoonacularAPI(query)
       .then((results) => {
@@ -96,7 +106,11 @@ function RecipeSearchContainer() {
             HOME PAGE
           </button>
 
-          <button className="btn btn-home" onClick={favouritesButton}>
+          <button
+            className="btn btn-home"
+            disabled={disabled}
+            onClick={favouritesButton}
+          >
             FAVOURITES
           </button>
           <br />
