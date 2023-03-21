@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import spoonacularJSON from "../../utils/spoonacularJSON.json";
+import "./Home.css";
 // on app load, check local storage for user search data
 // if we dont have any user searches saved, load JSON into local storage as starting data - note 27 recipes in this lump
 if(localStorage.getItem('recipe-results') === null) {localStorage.setItem('recipe-results', JSON.stringify(spoonacularJSON));}
@@ -26,9 +27,9 @@ function Home() {
     return (
         <div className="container content home-main">
             <div className="spiel row content">
-                <p className="title has-text-centered">
+                <h1 className="home-title has-text-centered">
                     Welcome to the offspring from the infamous Recipe Grabber
-                </p>
+                </h1>
                 <h3 className="is-size-3 py-2">Stacked with new features:</h3>
                 <ul className="is-size-4">
                     <li>User Signup/Login</li>
