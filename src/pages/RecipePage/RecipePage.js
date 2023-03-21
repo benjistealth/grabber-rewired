@@ -14,6 +14,8 @@ function RecipePage() {
   const recipeSteps = individualRecipe.analyzedInstructions[0].steps;
   const ingredients = individualRecipe.extendedIngredients;
   const [favorated, setFavorated] = useState(favourites.some(favorate => favorate.id === individualRecipe.id));
+  const [myArray, setMyArray] = useState([]);
+
   const heart = document.querySelector('#heart')
   // console.log(favorated)
   const GoBack = () => {
@@ -83,42 +85,21 @@ function RecipePage() {
     window.location.reload();
   }
 
-  const [myArray, setMyArray] = useState([]);
 
   useEffect(() => {
     const favourited = JSON.parse(localStorage.getItem("favourites"));
     setMyArray(favourited);
   }, []);
 
-  const hasObject = myArray.some(item => item.id === individualRecipe.id);
-
-
-  // favourites.forEach(favorate => {
-  //   if(individualRecipe.id === favorate.id) {
-  //     setFavorated(true);
-  //   } else {
-  //     setFavorated(false);
-  //   }
-  // })
-  if (favorated === true) {
-    console.log(true)
-    console.log(heart)
-    // heart.style.color = 'red'
-  } else {
-    console.log(false)
-    console.log(heart)
-
-    // heart.style.removeProperty('color')
+  let hasObject;
+  if(myArray !== null) {
+     hasObject = myArray.some(item => item.id === individualRecipe.id);
   }
-
   
-
   function setFavourite(e) {
     e.preventDefault();
     console.log(e)
-    // console.log(favorated)
     
-
     if (favorated === false) {
       addToFavourites(individualRecipe);
       heart.style.color = 'red'
@@ -148,10 +129,7 @@ function RecipePage() {
           </button>
           {/* <br /> */}
           <button className="btn btn-recipe btn-fav" onClick={setFavourite}>
-            Add Favourite <span id="heart">♥</span>
-          </button>
-          <button className="btn btn-recipe btn-fav" onClick={() => removeFromFavourites(individualRecipe)}>
-            Remove Favourite <span id="heart" style={{ color: hasObject ? "red" : "white"}}>♥</span>
+            {favorated ? 'Remove Favourite' : 'Add Favourite'} <span id="heart" style={{ color: hasObject ? "red" : "grey" }}>♥</span>
           </button>
           {/* <br /> */}
         </div>
