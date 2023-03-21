@@ -22,7 +22,7 @@ function App() {
     <div className={`App ${theme}`} data-test="component-app">
 
       <header>
-        {/* <Nav /> */}
+
         
       </header>
       <main className="mainbody pt-4">
