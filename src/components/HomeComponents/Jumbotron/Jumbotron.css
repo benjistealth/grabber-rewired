@@ -4,3 +4,16 @@
     padding: 0;
 }
 
+@media screen and (max-width: 1200px) {
+    .hero {
+        height: 20%;
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+    .hero {
+        height: 15%;
+    }
+
+}

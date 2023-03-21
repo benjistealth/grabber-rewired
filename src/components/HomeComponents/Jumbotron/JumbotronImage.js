@@ -55,7 +55,7 @@ function JumbotronImage() {
         position: 'absolute',
         top: '10%',
         right: '10%',
-        width: '30%',
+        width: 'auto',
         height: '80%'
     }
 
