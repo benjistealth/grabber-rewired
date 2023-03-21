@@ -22,3 +22,13 @@
     }
 
 }
+
+.theme-switch{
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px !important;
+}
