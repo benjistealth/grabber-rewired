@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import printJS from "print-js";
 import "./FavouriteRecipePage.css";
@@ -17,6 +17,15 @@ function FavouriteRecipePage() {
     navigate("/Favourites");
   };
 
+  const [myArray, setMyArray] = useState([]);
+
+  useEffect(() => {
+    const favourited = JSON.parse(localStorage.getItem("favourites"));
+    setMyArray(favourited);
+  }, []);
+
+  const hasObject = myArray.some((item) => item.id === individualRecipe.id);
+
   function removeFavourite(recipe){
     console.log("button clicked")
     const favourites = JSON.parse(localStorage.getItem('favourites')) || [];
@@ -28,6 +37,7 @@ function FavouriteRecipePage() {
         console.log("removed from favourites")
       }
     })
+    window.location.reload();
   };
 
   // useEffect(() => {
@@ -99,7 +109,7 @@ function FavouriteRecipePage() {
           </button>
           {/* <br /> */}
           <button className="btn btn-recipe btn-fav" onClick={() => removeFavourite(individualRecipe)}>
-            Remove Favourite <span id="heart">♥</span>
+            Remove Favourite <span id="heart" style={{ color: hasObject ? "red" : "white" }}>♥</span>
           </button>
           {/* <br /> */}
 
