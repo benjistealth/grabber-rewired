@@ -64,25 +64,30 @@ function FavouriteRecipePage() {
 
   return (
     <div className="container maincontainer">
-      {/* <button className="btn btn-back" onClick={handleClick}>Nutrition</button> */}
-      <div className="btn-box">
-        <div className="btn-box-bk">
-          <button className="btn btn-back" onClick={GoBack}>
-            Go Back
+      
+
+      <div className="btn-box container">
+
+        <div className="btn-box-left">
+          <button className="btn btn-recipe" onClick={GoBack}>
+            <p>Go Back</p>
           </button>
-          <br />
+
         </div>
-        <div className="btn-box-util">
-          <button className="btn btn-print" onClick={printRecipe}>
+
+        <div className="btn-box-right">
+          <button className="btn btn-recipe" onClick={printRecipe}>
             Print Recipe
           </button>
-          <br />
-          <button className="btn btn-email" onClick={EmailRecipe}>
+          {/* <br /> */}
+          <button className="btn btn-recipe" onClick={EmailRecipe}>
             Email yourself THIS recipe
           </button>
-          <br />
+          {/* <br /> */}
         </div>
-      </div>
+
+      </div> 
+      
       <div className="recipe" id="printRecipe">
         {/* <h1 className="foodTitle">{individualRecipe.title}</h1>
         <br />

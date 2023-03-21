@@ -35,7 +35,7 @@
   margin: 1rem;
 }
 
-#heart {
+.btn-fav span #heart {
   color: red;
 }
 
@@ -127,18 +127,23 @@
 
   .btn {
     font-size: 10px !important;
-    height: 2.5;
-    width: 5;
+    height: 2rem;
+    width: 4rem;
   }
 
   .btn-box {
-    flex-direction: column;
+    /* flex-direction: column; */
+    justify-content: center;
   }
 }
 
 @media screen and (max-width: 450px) {
   .container.btn-box {
-    flex-direction: column;
+    /* flex-direction: column; */
   }
-
+  .btn {
+    font-size: 5pt !important;
+    height: 1rem;
+    width: 2rem;
+  }
 }
