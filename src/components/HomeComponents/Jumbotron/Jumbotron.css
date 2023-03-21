@@ -4,6 +4,11 @@
     padding: 0;
 }
 
+.btn-logout {
+    position: relative;
+}
+
+
 @media screen and (max-width: 1200px) {
     .hero {
         height: 20%;
@@ -16,4 +21,24 @@
         height: 15%;
     }
 
+}
+
+.theme-switch{
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px !important;
+}
+
+.btn-logout {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px !important;
 }

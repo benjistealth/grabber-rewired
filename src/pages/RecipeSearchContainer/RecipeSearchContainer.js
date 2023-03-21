@@ -76,7 +76,7 @@ function RecipeSearchContainer() {
         localStorage.setItem('unsplashImage', backgroundImage);
       })
       .catch((err) => {
-        throw err;
+        // throw err; swallow errors for marking and demo
       })
   };
 
