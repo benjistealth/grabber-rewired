@@ -61,30 +61,35 @@ function RecipePage() {
     if (!favourites.some(favourite => favourite.id === recipe.id)) { //checks to see if the item is already in the favourites list and if not adds it
       favourites.push(recipe);
       localStorage.setItem('favourites', JSON.stringify(favourites));
-      console.log(recipe.title + " stored to favourites");
-    } else {
-      console.log(recipe.title + " is already in favourites");
-    }
+    } 
   }
 
-  // function removeFromFavourites(recipe) {
-  //   const favourites = JSON.parse(localStorage.getItem('favourites')) || []; // retrieves the stored array from local storage or creates a new one if none exists
-  
-  // }
+  function removeFromFavourites(recipe) {
+    const favourites = JSON.parse(localStorage.getItem('favourites')) || [];
+    favourites.forEach(favorate => {
+      if(recipe.id === favorate.id) {
+        const index = favourites.indexOf(favorate);
+        favourites.splice(index, 1);
+        localStorage.setItem('favourites', JSON.stringify(favourites));
+      }
+    })
+  }
 
   let favorated = false;
 
   function setFavourite(e) {
     e.preventDefault();
-    addToFavourites(individualRecipe);
+    // addToFavourites(individualRecipe);
     console.log(e)
 
     let heart = document.querySelector('#heart')
 
     if (favorated === false) {
+      addToFavourites(individualRecipe);
       heart.style.color = 'red'
       favorated = true;
     } else {
+      removeFromFavourites(individualRecipe);
       heart.style.removeProperty('color')
       favorated = false;
     }
