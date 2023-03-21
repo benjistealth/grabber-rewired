@@ -35,9 +35,9 @@
   margin: 1rem;
 }
 
-.btn-fav span #heart {
-  color: red;
-}
+/* #heart {
+  color: red !important;
+} */
 
 .foodTitle {
   text-align: center;

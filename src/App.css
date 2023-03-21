@@ -65,19 +65,16 @@ p,
 strong,
 label {
   color: var(--text-primary) !important;
-}
+} 
+
 
 button {
     color: var(--text-primary) !important;
     background-color: var(--bg-primary) !important;
     border-color: var(--comp-button) !important;
-}
+} 
 
-/* .btn {
-    background-color: yellow !important;
-    border-color: blue !important;
 
-} */
 
 .hero-body {
   background-color: var(--bg-jumbotron);
@@ -96,7 +93,7 @@ button {
     color: var(--text-primary) !important;
 }
 
-::placeholder, span {
+::placeholder {
     color: var(--text-secondary) !important
 }
 
@@ -108,8 +105,8 @@ button {
 
 .infocontainer {
     background-color: var(--bg-secondary) !important;
-}
+} 
 
 #logincard, #signupcard {
     border-color: var(--text-primary) !important;
-}
+} 

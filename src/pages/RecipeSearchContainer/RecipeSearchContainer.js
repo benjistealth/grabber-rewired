@@ -10,7 +10,6 @@ import "./RecipeSearchContainer.css";
 
 function RecipeSearchContainer() {
   const storedResults = JSON.parse(localStorage.getItem('recipe-results'));
-  console.log(storedResults);
   const [spoonacularResults, setSpoonacularResults] = useState(storedResults);
   const [search, setSearch] = useState("");
   const [unsplashImage, setBackgroundImg] = useState(localStorage.getItem('unsplashImage')); // draws background image from local storage
@@ -91,6 +90,7 @@ function RecipeSearchContainer() {
   return (
     <div style={backgroundStyle} className="cardContainer">
       <div className="container">
+        <br></br>
         <RecipeSearchBar
           onChange={handleChange}
           value={search}
