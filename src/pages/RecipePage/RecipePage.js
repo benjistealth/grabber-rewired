@@ -61,6 +61,7 @@ function RecipePage() {
     if (!favourites.some(favourite => favourite.id === recipe.id)) { //checks to see if the item is already in the favourites list and if not adds it
       favourites.push(recipe);
       localStorage.setItem('favourites', JSON.stringify(favourites));
+      console.log("added to favourites")
     } 
   }
 
@@ -71,6 +72,7 @@ function RecipePage() {
         const index = favourites.indexOf(favorate);
         favourites.splice(index, 1);
         localStorage.setItem('favourites', JSON.stringify(favourites));
+        console.log("removed from favourites")
       }
     })
   }
@@ -80,7 +82,7 @@ function RecipePage() {
   function setFavourite(e) {
     e.preventDefault();
     // addToFavourites(individualRecipe);
-    console.log(e)
+    // console.log(e)
 
     let heart = document.querySelector('#heart')
 

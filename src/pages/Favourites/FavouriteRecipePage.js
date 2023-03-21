@@ -15,6 +15,19 @@ function FavouriteRecipePage() {
     navigate("/Favourites");
   };
 
+  function removeFavourite(recipe){
+    console.log("button clicked")
+    const favourites = JSON.parse(localStorage.getItem('favourites')) || [];
+    favourites.forEach(favourite => {
+      if(recipe.id === favourite.id){
+        const index = favourites.indexOf(favourite);
+        favourites.splice(index, 1);
+        localStorage.setItem('favourites', JSON.stringify(favourites));
+        console.log("removed from favourites")
+      }
+    })
+  };
+
   const caloricBreakdown = individualRecipe.nutrition.caloricBreakdown;
 
   const printRecipe = () => {
@@ -72,6 +85,11 @@ function FavouriteRecipePage() {
           <button className="btn btn-recipe" onClick={GoBack}>
             <p>Go Back</p>
           </button>
+          {/* <br /> */}
+          <button className="btn btn-recipe btn-fav" onClick={() => removeFavourite(individualRecipe)}>
+            Remove Favourite <span id="heart">♥</span>
+          </button>
+          {/* <br /> */}
 
         </div>
 
