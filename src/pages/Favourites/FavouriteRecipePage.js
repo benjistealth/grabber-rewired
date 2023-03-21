@@ -11,6 +11,8 @@ function FavouriteRecipePage() {
   const [servingSize, setServingSize] = useState(individualRecipe.servings);
   const recipeSteps = individualRecipe.analyzedInstructions[0].steps;
   const ingredients = individualRecipe.extendedIngredients;
+  // const [myArray, setMyArray] = useState([]);
+
   const GoBack = () => {
     navigate("/Favourites");
   };
@@ -27,6 +29,16 @@ function FavouriteRecipePage() {
       }
     })
   };
+
+  // useEffect(() => {
+  //   const favourited = JSON.parse(localStorage.getItem("favourites"));
+  //   setMyArray(favourited);
+  // }, []);
+
+  // let hasObject;
+  // if(myArray !== null) {
+  //    hasObject = myArray.some(item => item.id === individualRecipe.id);
+  // }
 
   const caloricBreakdown = individualRecipe.nutrition.caloricBreakdown;
 
