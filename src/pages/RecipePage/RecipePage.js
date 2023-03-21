@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import printJS from "print-js";
 import "./RecipePageGuest.css";
-// import emailjs from '@emailjs/browser'; - uncomment this and below to enable email sending
+//import emailjs from '@emailjs/browser'; // - uncomment this and below to enable email sending
 // commented to conserve email allowance for required tests
 
 function RecipePage() {
@@ -31,30 +31,28 @@ function RecipePage() {
     const user_name = loggeduser.name;
     const user_email = loggeduser.email;
 
-    let emailData = individualRecipe.title + "\n";
-    emailData += individualRecipe.sourceUrl + "\n";
-    emailData += individualRecipe.summary + "\n";
+    const r_title = individualRecipe.title + "\n";
+    const r_url = individualRecipe.sourceUrl + "\n";
+    const r_summary = individualRecipe.summary + "\n";
 
     var templateParams = {
       user_name: user_name,
       user_email: user_email,
-      message: emailData
+      r_title: r_title,
+      r_url: r_url,
+      r_summary: r_summary
     };
 
-    //                                                                                        //
-    // leaving the email sending commented out as I used 25% of monthly allowance already :-) //
-    //                                                                                        //
-    console.log(templateParams); // test email send button to browser console
+    console.log(templateParams); // test email send to console to conserve email allowance for testing
 
     // emailjs.send(serviceID, templateID, templateParams, publicKey)
-    // emailjs.send('service_4kxk2ps', 'template_qgabn5g', templateParams, 'NyspTPaNNuHG_EVwK')
-    //   .then(function (response) {
-    //     // console.log('SUCCESS!', response.status, response.text);
-    //     alert("Email Sent.....😍")
-    //   }, function (error) {
-    //     console.log('FAILED...', error);
-    //     alert("Email send error.....💩")
-    //   });
+  //   emailjs.send('service_4kxk2ps', 'template_qgabn5g', templateParams, 'NyspTPaNNuHG_EVwK')
+  //     .then(function (response) {
+  //       alert("Email Sent.....😍")
+  //     }, function (error) {
+  //       // console.log('FAILED...', error); swallow errors for marking :-)
+  //       alert("Email send error.....💩")
+  //     });
 
   };
 
