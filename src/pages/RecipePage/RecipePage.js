@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import printJS from "print-js";
-import "./RecipePageGuest.css";
+import "./RecipePage.css";
 //import emailjs from '@emailjs/browser'; // - uncomment this and below to enable email sending
 // commented to conserve email allowance for required tests
 
@@ -67,14 +67,38 @@ function RecipePage() {
     }
   }
 
+  // function removeFromFavourites(recipe) {
+  //   const favourites = JSON.parse(localStorage.getItem('favourites')) || []; // retrieves the stored array from local storage or creates a new one if none exists
+  
+  // }
+
+  let favorated = false;
+
   function setFavourite(e) {
     e.preventDefault();
     addToFavourites(individualRecipe);
+    console.log(e)
+
+    let heart = document.querySelector('#heart')
+
+    if (favorated === false) {
+      heart.style.color = 'red'
+      favorated = true;
+    } else {
+      heart.style.removeProperty('color')
+      favorated = false;
+    }
+
+    // heart.style.color = 'red'
+
+    
   };
 
   function handleSlider(e) {
     setServingSize(e.target.value);
   };
+
+
 
   return (
     <div className="container maincontainer">
@@ -87,7 +111,7 @@ function RecipePage() {
           </button>
           {/* <br /> */}
           <button className="btn btn-recipe btn-fav" onClick={setFavourite}>
-            Add Favourite <span id="heart">🤍</span>
+            Add Favourite <span id="heart">♥</span>
           </button>
           {/* <br /> */}
         </div>

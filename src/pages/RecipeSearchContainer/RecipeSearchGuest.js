@@ -69,6 +69,7 @@ function RecipeSearchGuest() {
   return (
     <div style={backgroundStyle} className="cardContainer">
       <div className="container">
+      <br></br>
         <RecipeSearchBar
           onChange={handleChange}
           value={search}
