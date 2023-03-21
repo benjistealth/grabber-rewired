@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import printJS from "print-js";
 import "./RecipePage.css";
@@ -8,9 +8,14 @@ import "./RecipePage.css";
 function RecipePage() {
   const navigate = useNavigate();
   const individualRecipe = JSON.parse(localStorage.getItem("individual-result"));
+  const favourites = JSON.parse(localStorage.getItem('favourites')) || []; // retrieves the stored array from local storage or creates a new one if none exists
+
   const [servingSize, setServingSize] = useState(individualRecipe.servings);
   const recipeSteps = individualRecipe.analyzedInstructions[0].steps;
   const ingredients = individualRecipe.extendedIngredients;
+  const [favorated, setFavorated] = useState(favourites.some(favorate => favorate.id === individualRecipe.id));
+  const heart = document.querySelector('#heart')
+  // console.log(favorated)
   const GoBack = () => {
     navigate("/RecipeSearchContainer");
   };
@@ -34,6 +39,8 @@ function RecipePage() {
     const r_title = individualRecipe.title + "\n";
     const r_url = individualRecipe.sourceUrl + "\n";
     const r_summary = individualRecipe.summary + "\n";
+
+    
 
     var templateParams = {
       user_name: user_name,
@@ -61,7 +68,6 @@ function RecipePage() {
     if (!favourites.some(favourite => favourite.id === recipe.id)) { //checks to see if the item is already in the favourites list and if not adds it
       favourites.push(recipe);
       localStorage.setItem('favourites', JSON.stringify(favourites));
-      console.log("added to favourites")
     } 
   }
 
@@ -72,33 +78,57 @@ function RecipePage() {
         const index = favourites.indexOf(favorate);
         favourites.splice(index, 1);
         localStorage.setItem('favourites', JSON.stringify(favourites));
-        console.log("removed from favourites")
       }
     })
+    window.location.reload();
   }
 
-  let favorated = false;
+  const [myArray, setMyArray] = useState([]);
+
+  useEffect(() => {
+    const favourited = JSON.parse(localStorage.getItem("favourites"));
+    setMyArray(favourited);
+  }, []);
+
+  const hasObject = myArray.some(item => item.id === individualRecipe.id);
+
+
+  // favourites.forEach(favorate => {
+  //   if(individualRecipe.id === favorate.id) {
+  //     setFavorated(true);
+  //   } else {
+  //     setFavorated(false);
+  //   }
+  // })
+  if (favorated === true) {
+    console.log(true)
+    console.log(heart)
+    // heart.style.color = 'red'
+  } else {
+    console.log(false)
+    console.log(heart)
+
+    // heart.style.removeProperty('color')
+  }
+
+  
 
   function setFavourite(e) {
     e.preventDefault();
-    // addToFavourites(individualRecipe);
-    // console.log(e)
-
-    let heart = document.querySelector('#heart')
+    console.log(e)
+    // console.log(favorated)
+    
 
     if (favorated === false) {
       addToFavourites(individualRecipe);
       heart.style.color = 'red'
-      favorated = true;
-    } else {
+      setFavorated(true)
+    } else  if (favorated === true){
       removeFromFavourites(individualRecipe);
       heart.style.removeProperty('color')
-      favorated = false;
+      setFavorated(false)
     }
-
-    // heart.style.color = 'red'
-
-    
+  
   };
 
   function handleSlider(e) {
@@ -119,6 +149,9 @@ function RecipePage() {
           {/* <br /> */}
           <button className="btn btn-recipe btn-fav" onClick={setFavourite}>
             Add Favourite <span id="heart">♥</span>
+          </button>
+          <button className="btn btn-recipe btn-fav" onClick={() => removeFromFavourites(individualRecipe)}>
+            Remove Favourite <span id="heart" style={{ color: hasObject ? "red" : "white"}}>♥</span>
           </button>
           {/* <br /> */}
         </div>
