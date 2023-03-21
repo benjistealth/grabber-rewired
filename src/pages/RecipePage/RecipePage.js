@@ -89,7 +89,7 @@ function RecipePage() {
           </button>
           {/* <br /> */}
           <button className="btn btn-recipe btn-fav" onClick={setFavourite}>
-            Favourite <span id="heart">🤍</span>
+            Add Favourite <span id="heart">🤍</span>
           </button>
           {/* <br /> */}
         </div>

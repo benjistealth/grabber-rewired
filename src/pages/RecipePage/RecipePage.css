@@ -131,15 +131,14 @@
     width: 4rem;
   }
 
-  .btn-box {
-    /* flex-direction: column; */
-    justify-content: center;
+  .container.btn-box {
+    flex-direction: row;
   }
 }
 
 @media screen and (max-width: 450px) {
   .container.btn-box {
-    /* flex-direction: column; */
+    flex-direction: row;
   }
   .btn {
     font-size: 5pt !important;
