@@ -19,11 +19,10 @@ import FavouriteRecipePage from "./pages/Favourites/FavouriteRecipePage";
 function App() {
   const { theme } = useContext(ThemeContext)
   return (
-    <div className={`App ${theme}`} data-test="component-app">
+    <div className={`container App ${theme}`} data-test="component-app">
 
       <header>
 
-        
       </header>
       <main className="mainbody pt-4">
         

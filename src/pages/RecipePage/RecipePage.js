@@ -79,30 +79,34 @@ function RecipePage() {
   };
 
   return (
-    <div className=" maincontainer">
-      {/* <button className="btn btn-back" onClick={handleClick}>Nutrition</button> */}
-      <div className="btn-box">
-        <div className="btn-box-bk">
-          <button className="btn btn-back" onClick={GoBack}>
+    <div className="container maincontainer">
+
+      <div className="btn-box container">
+
+        <div className="btn-box-left">
+          <button className="btn btn-recipe" onClick={GoBack}>
             <p>Go Back</p>
           </button>
-          <br />
-          <button className="btn btn-back" onClick={setFavourite}>
-            Favourite 🤍
+          {/* <br /> */}
+          <button className="btn btn-recipe btn-fav" onClick={setFavourite}>
+            Favourite <span id="heart">🤍</span>
           </button>
-          <br />
+          {/* <br /> */}
         </div>
-        <div className="btn-box-util">
-          <button className="btn btn-print" onClick={printRecipe}>
+
+        <div className="btn-box-right">
+          <button className="btn btn-recipe" onClick={printRecipe}>
             Print Recipe
           </button>
-          <br />
-          <button className="btn btn-email" onClick={EmailRecipe}>
+          {/* <br /> */}
+          <button className="btn btn-recipe" onClick={EmailRecipe}>
             Email yourself THIS recipe
           </button>
-          <br />
+          {/* <br /> */}
         </div>
-      </div>
+
+      </div> 
+
       <div className="recipe" id="printRecipe">
         <div className="container infocontainer">
           <div className="col-md-2 ms-3 mt-5 mb-5 instructionscontainer">
