@@ -6,7 +6,7 @@ import "./Jumbotron.css"
 function Jumbotron() {
   
   return (
-    <section className="hero is-medium is-link">
+    <section className="hero jumbo is-medium is-link">
       <div className="hero-body">
         <JumbotronImage />
         <JumbotronTitle />
