@@ -32,3 +32,13 @@
     align-items: center;
     width: 100px !important;
 }
+
+.btn-logout {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px !important;
+}
