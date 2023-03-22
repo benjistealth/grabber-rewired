@@ -56,7 +56,7 @@ function RecipeSearchContainer() {
   }
 
   function favouritesButton() {
-    navigate("/Favourites");
+    navigate("/FavouritesRecipeContainer");
   }
 
   function searchRecipes(query) {

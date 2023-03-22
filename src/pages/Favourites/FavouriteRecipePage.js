@@ -21,8 +21,9 @@ function FavouriteRecipePage() {
   const [myArray, setMyArray] = useState([]);
 
   const heart = document.querySelector("#heart");
+
   const GoBack = () => {
-    navigate("/RecipeSearchContainer");
+    navigate("/FavouritesRecipeContainer");
   };
 
   const caloricBreakdown = individualRecipe.nutrition.caloricBreakdown;

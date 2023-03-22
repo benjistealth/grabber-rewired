@@ -12,7 +12,7 @@ import TestingPage from "./pages/TestingPage";
 import SignUp from "./pages/SignUpLogin/SignUp";
 import Login from "./pages/SignUpLogin/Login";
 import Home from "./pages/Home/Home";
-import Favourites from "./pages/Favourites/FavouritesRecipeContainer";
+import FavouritesRecipeContainer from "./pages/Favourites/FavouritesRecipeContainer";
 import FavouriteRecipePage from "./pages/Favourites/FavouriteRecipePage";
 
 function App() {
@@ -38,7 +38,7 @@ function App() {
                 path="/RecipeSearchGuest"
                 element={<RecipeSearchGuest />}
               />
-              <Route path="/Favourites" element={<Favourites />} />
+              <Route path="/FavouritesRecipeContainer" element={<FavouritesRecipeContainer />} />
               <Route
                 path="/FavouriteRecipePage"
                 element={<FavouriteRecipePage />}
