@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import JumbotronTitle from "./JumbotronTitle";
 import JumbotronImage from "./JumbotronImage";
 import Toggle from "../Switch/Toggle";
@@ -10,6 +11,16 @@ function Jumbotron() {
 
   const navigate = useNavigate();
 
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const loggedIn = localStorage.getItem("loggedin");
+
+    if (loggedIn === "false") {
+      setIsVisible(false);
+    }
+  }, []);
+
   const Logout = () => {
 
     if (localStorage.getItem("loggedin") !== null) {
@@ -21,7 +32,7 @@ function Jumbotron() {
         console.log("user logged out");
       }
     }
-
+    window.location.reload();
   }
 
   return (
@@ -36,9 +47,9 @@ function Jumbotron() {
             <MoonIcon />
           </div>
         </div>
-        <button className="btn-logout" onClick={Logout}>
-          Logout
-        </button>
+        {isVisible && (
+          <button className="btn btn-logout" onClick={Logout}> Logout </button>
+        )}
       </div>
     </section>
   );
