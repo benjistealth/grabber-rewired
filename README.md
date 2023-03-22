@@ -31,7 +31,7 @@ A web application to grab recipes with ingredients and instructions by inputting
 ## User Story
 
 AS someone struggling to think of what to cook <br/>
-I WANT an app that can help me figure out what meal to cook from some ingredients I have in <br/> 
+I WANT an app that can give me inspiration to ignite my cooking spark <br/> 
 SO THAT I can create a tasty meal to feast on!
 
 <p align="right">(<a href="#table-of-contents">back to top</a>)</p>
@@ -42,12 +42,11 @@ For this project we needed to create a responsive web application with the follo
 
 <ul>
     <li>Application uses REACT,</li>
-    <li>At least 2 GET routes for retrieving data, </li>
-    <li>At least 2 new technologies/libraries/packages previously not used in class, </li>
+    <li>It has at least 2 GET routes for retrieving data, </li>
+    <li>And uses at least 2 new technologies/libraries/packages not previously used. </li>
 </ul>
 
 All of which had to be able to deploy properly on netlify. <br/>
-
 
 <p align="right">(<a href="#table-of-contents">back to top</a>)</p>
 
@@ -101,11 +100,9 @@ This project is using the MIT license. See the LICENCE file for more information
 
 ## Contact
 
-  - If you have any questions about the repo, please contact us on: 
-  
-  - email: <a href="mailto:">email</a>
+  - If you have any questions about the repo, please contact us via Grabber-Rewired issues for tracking purposes: 
 
-  - GitHub: <a href="https://github.com/" target="_blank" rel="noopener noreferrer"></a>
+  - GitHub: <a href="https://github.com/benjistealth/grabber-rewired/issues" target="_blank" rel="noopener noreferrer"> < Grabber-Rewired /> Issues </a>
 
 <p align="right">(<a href="#table-of-contents">back to top</a>)</p>
 
@@ -116,9 +113,6 @@ We would like to thank the food gods for the nom noms they have provided and the
 * [Best-README-Template](https://github.com/othneildrew/Best-README-Template)
 * [README-Badges](https://github.com/alexandresanlim/Badges4-README.md-Profile/blob/master/README.md)
 * [Licence-Badges](https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba)
-* [EDX Skills for Life Bootcamp](https://skillsforlife.edx.org/)
 * [Spoonacular](https://spoonacular.com/)
 
 <p align="right">(<a href="#table-of-contents">back to top</a>)</p>
-
-© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
