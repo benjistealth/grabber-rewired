@@ -2,8 +2,9 @@
 
 # Grabber-Rewired
 
+## Table-Of-Contents
 <details>
-  <summary>Table of Contents</summary>
+  <summary>Click Me!</summary>
   <ol>
     <li>
       <a href="#description">Description</a>
@@ -62,6 +63,7 @@ All of which had to be able to deploy properly on netlify. <br/>
 <img src="https://img.shields.io/badge/print--js-yellow?style=for-the-badge"/>  <img src="https://img.shields.io/badge/Font_Awesome-339AF0?style=for-the-badge&logo=fontawesome&logoColor=white"/>
 
 <p align="right">(<a href="#table-of-contents">back to top</a>)</p>
+
 
 ## Usage
 
