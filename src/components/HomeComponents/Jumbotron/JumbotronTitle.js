@@ -41,13 +41,14 @@ function JumbotronTitle() {
   }
 
   const style = {
+    fontFamily: "'Kocak', sans-serif",                                     
     position: "absolute",
     display: "inline",
     top: "40%",
     left: "10%",
     height: "20%",
-    width: "50%",
-    fontSize: "clamp(16px, 5vw, 60px)",
+    width: "40%",
+    fontSize: "clamp(16px, 2vw, 40px)",
   };
 
   return (

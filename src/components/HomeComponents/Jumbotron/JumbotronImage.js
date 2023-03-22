@@ -55,7 +55,7 @@ function JumbotronImage() {
   const style = {
     position: "absolute",
     bottom: "15%",
-    left: "50%",
+    left: "60%",
     width: "30%",
     height: "auto",
     borderRadius: "5px",
