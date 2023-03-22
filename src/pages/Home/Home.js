@@ -27,7 +27,7 @@ function Home() {
                 <h1 className="home-title has-text-centered">
                     Welcome to the offspring from the infamous Recipe Grabber
                 </h1>
-                <h3 className="is-size-3 py-2">Stacked with new features:</h3>
+                <h3 className="is-size-3 features py-2">Stacked with new features:</h3>
                 <ul className="is-size-4">
                     <li>User Signup/Login</li>
                     <li>Guest login with limited features</li>

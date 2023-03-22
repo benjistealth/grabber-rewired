@@ -99,6 +99,9 @@
     margin-left: 1rem;
     margin-top: 1rem;
   }
+  .home-title {
+    font-size: 10px;
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -147,6 +150,9 @@
     margin-left: 1rem;
     margin-top: 1rem;
   }
+  .home-title {
+  
+  }
 
 }
 
@@ -167,6 +173,9 @@
   .btn-bk-g {
     margin-left: 1rem;
     margin-top: 1rem;
+  }
+  .home-title {
+  
   }
 }
 
@@ -202,6 +211,9 @@
     margin-left: 1rem;
     margin-top: 1rem;
   }
+  .home-title {
+  
+  }
 }
 
 @media screen and (max-width: 450px) {
@@ -218,5 +230,8 @@
   .btn-bk-g {
     margin-left: 1rem;
     margin-top: 1rem;
+  }
+  .home-title {
+  
   }
 }
