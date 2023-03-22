@@ -36,7 +36,7 @@ function Jumbotron() {
             <MoonIcon />
           </div>
         </div>
-        <button className="btn btn-logout" onClick={Logout}>
+        <button className="btn-logout" onClick={Logout}>
           Logout
         </button>
       </div>

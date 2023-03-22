@@ -38,7 +38,26 @@
     top: 2%;
     right: 2%;
     display: flex;
+    border-radius: 5px;
     justify-content: center;
     align-items: center;
     width: 100px !important;
 }
+@media screen and (max-width: 1216px) {
+    .btn-logout {
+      font-size: 14px !important;
+      height: 3rem;
+      width: auto;
+      border-radius: 5px;
+    }
+  
+  @media screen and (max-width: 900px) {
+    .btn-logout {
+      font-size: 10px !important;
+      height: 3rem;
+      width: 3rem;
+      border-radius: 5px;
+    }
+}
+  
+  }
