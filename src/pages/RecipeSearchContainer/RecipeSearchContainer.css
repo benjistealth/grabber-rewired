@@ -1,6 +1,7 @@
 html, body {
     height: 100vh;
 }
+
 .cardContainer {
     min-height: 100vh;
 }

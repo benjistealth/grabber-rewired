@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./SignUpLogin.css";
 
-
 function Login() {
   const navigate = useNavigate();
   const [input, setInput] = useState({
@@ -13,28 +12,28 @@ function Login() {
 
   function Signup() {
     navigate("/SignUp");
-  };
+  }
 
   function homeButton() {
-    navigate('/');
+    navigate("/");
   }
 
   const handleLogin = (e) => {
     e.preventDefault();
     const loggeduser = JSON.parse(localStorage.getItem("user"));
-    // console.log(loggeduser);
     if (loggeduser === null) {
-      alert("login information not found, please sign up")
-    }
-    else if (input.email === loggeduser.email && input.password === loggeduser.password) {
+      alert("login information not found, please sign up");
+    } else if (
+      input.email === loggeduser.email &&
+      input.password === loggeduser.password
+    ) {
       localStorage.setItem("loggedin", true);
       navigate("/RecipeSearchContainer");
       window.location.reload();
-    }
-    else {
+    } else {
       alert("Your username or password are incorrect. Please try again");
     }
-  }
+  };
 
   return (
     <div className="vh-100 d-flex justify-content-center align-items-top">
@@ -119,4 +118,3 @@ function Login() {
 }
 
 export default Login;
-

@@ -7,9 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-
 .mainbody{
   height: calc(120vh + 400px);
-  
 }
 

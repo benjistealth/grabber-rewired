@@ -7,7 +7,6 @@ import Wrapper from "../../components/HomeComponents/Wrapper";
 import UnsplashAPI from "../../utils/unsplashAPI";
 import "./RecipeSearchContainer.css";
 
-
 function RecipeSearchGuest() {
   const storedResults = JSON.parse(localStorage.getItem('recipe-results')) || []; // checks for stored data or uses empty array if none found
   const [spoonacularResults, setSpoonacularResults] = useState(storedResults);
@@ -38,14 +37,11 @@ function RecipeSearchGuest() {
     navigate('/');
   }
 
-  const searchRecipes = (query) => {
+  function searchRecipes(query) {
     SpoonacularAPI(query)
       .then((results) => {
         setSpoonacularResults(results);
         localStorage.setItem('recipe-results', JSON.stringify(results)); // save new results to local storage
-      })
-      .catch((err) => {
-        throw err;
       })
 
     UnsplashAPI(search)
@@ -53,9 +49,6 @@ function RecipeSearchGuest() {
         const backgroundImage = results[Math.floor(Math.random() * 9)].urls.regular;
         setBackgroundImg(backgroundImage);
         localStorage.setItem('unsplashImage', backgroundImage);
-      })
-      .catch((err) => {
-        throw err;
       })
   };
 
@@ -100,22 +93,3 @@ function RecipeSearchGuest() {
 }
 
 export default RecipeSearchGuest;
-
-
-// cards clickable. event handlers DONE
-
-// clicked card shows correct json data in console log DONE
-
-// react router create new page DONE
-
-// take that json data and show it on new page DONE
-
-// react router new page will have buttons. event handlers needed for those DONE
-
-// Ben, working on send email function & clean up file structure - DONE
-
-// Toby, working on nutritional info - DONE
-
-// Leanne, working on readme & presentation
-
-// Shane, working on print to pdf & limit guest user access - DONE

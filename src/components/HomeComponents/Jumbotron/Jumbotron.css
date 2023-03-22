@@ -1,56 +1,53 @@
 .hero {
-    position: relative;
-    height: 30%;
-    padding: 0;
+  position: relative;
+  height: 30%;
+  padding: 0;
 }
 
 .btn-logout {
-    position: relative;
+  position: relative;
 }
 
-
 @media screen and (max-width: 1200px) {
-    .hero {
-        height: 20%;
-    }
-
+  .hero {
+    height: 20%;
+  }
 }
 
 @media screen and (max-width: 900px) {
-    .hero {
-        height: 15%;
-    }
-
+  .hero {
+    height: 15%;
+  }
 }
 
-.theme-switch{
-    position: absolute;
-    top: 2%;
-    left: 2%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100px !important;
+.theme-switch {
+  position: absolute;
+  top: 4%;
+  left: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px !important;
 }
 
 .btn-logout {
-    position: absolute;
-    top: 2%;
-    right: 2%;
-    display: flex;
-    border-radius: 5px;
-    justify-content: center;
-    align-items: center;
-    width: 100px !important;
+  position: absolute;
+  top: 4%;
+  right: 2%;
+  display: flex;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  width: 100px !important;
 }
 @media screen and (max-width: 1216px) {
-    .btn-logout {
-      font-size: 14px !important;
-      height: 3rem;
-      width: auto;
-      border-radius: 5px;
-    }
-  
+  .btn-logout {
+    font-size: 14px !important;
+    height: 3rem;
+    width: auto;
+    border-radius: 5px;
+  }
+
   @media screen and (max-width: 900px) {
     .btn-logout {
       font-size: 10px !important;
@@ -58,6 +55,5 @@
       width: 3rem;
       border-radius: 5px;
     }
-}
-  
   }
+}

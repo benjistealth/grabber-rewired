@@ -5,10 +5,9 @@ import Toggle from "../Switch/Toggle";
 import SunIcon from "../Jumbotron/assets/icons/sunIcon";
 import MoonIcon from "../Jumbotron/assets/icons/moonIcon";
 import { useNavigate } from "react-router-dom";
-import "./Jumbotron.css"
+import "./Jumbotron.css";
 
 function Jumbotron() {
-
   const navigate = useNavigate();
 
   const [isVisible, setIsVisible] = useState(true);
@@ -22,18 +21,17 @@ function Jumbotron() {
   }, []);
 
   const Logout = () => {
-
     if (localStorage.getItem("loggedin") !== null) {
       let loggedIn = localStorage.getItem("loggedin");
       console.log(loggedIn);
       if (loggedIn) {
         localStorage.setItem("loggedin", false);
-        navigate('/');
+        navigate("/");
         console.log("user logged out");
       }
     }
     window.location.reload();
-  }
+  };
 
   return (
     <section className="hero jumbo is-medium is-link">
@@ -48,7 +46,10 @@ function Jumbotron() {
           </div>
         </div>
         {isVisible && (
-          <button className="btn btn-logout" onClick={Logout}> Logout </button>
+          <button className="btn btn-logout" onClick={Logout}>
+            {" "}
+            Logout{" "}
+          </button>
         )}
       </div>
     </section>
