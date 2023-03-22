@@ -115,9 +115,9 @@
   }
 
   .btn {
-    font-size: 14px !important;
-    width: 4rem;
-    height: 3rem;
+    font-size: 11px !important;
+    width: 5rem;
+    height: 4rem;
   }
   .short-text.btn-fav,
   .btn-bk {
@@ -143,6 +143,11 @@
   .full-text.btn-email {
     display: none;
   }
+  .btn-home {
+    font-size: 12pt !important;
+    height: 4rem;
+    width: auto;
+  }
 
 }
 
@@ -155,10 +160,10 @@
     font-size: 14px;
   }
 
-  .btn {
-    font-size: 10px !important;
-    width: 4rem;
-    height: 3rem;
+  .btn-recipe {
+    font-size: 8px !important;
+    width: 5rem;
+    height: 4rem;
   }
 }
 
@@ -182,9 +187,9 @@
   }
 
   .btn {
-    font-size: 10px !important;
-    height: 3rem;
-    width: 4rem;
+    font-size: 8px !important;
+    height: 5rem;
+    width: auto;
   }
 
   .container.btn-box {
@@ -197,9 +202,9 @@
     flex-direction: row;
   }
 
-  /* .btn {
+  .btn-home {
     font-size: 5pt !important;
-    height: 1rem;
-    width: 2rem;
-  } */
+    height: 4rem;
+    width: auto;
+  }
 }

@@ -54,3 +54,8 @@
     color: #36454F !important;
   }
   
+  @media screen and (max-width: 1216px) {
+    .card-container {
+      margin-bottom: 1rem;
+    }
+  }
