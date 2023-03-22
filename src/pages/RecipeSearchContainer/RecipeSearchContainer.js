@@ -60,13 +60,13 @@ function RecipeSearchContainer() {
   const searchRecipes = (query) => {
     SpoonacularAPI(query)
       .then((results) => {
-        if (results != null) {
+        if (results != null) { // catch empty payload coming back and skip save
           setSpoonacularResults(results);
           localStorage.setItem('recipe-results', JSON.stringify(results)); // save new results to local storage
         }
       })
       .catch((err) => {
-        throw err;
+        // throw err; swallow errors
       })
 
     UnsplashAPI(search)

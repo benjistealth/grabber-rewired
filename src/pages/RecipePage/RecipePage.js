@@ -82,7 +82,7 @@ function RecipePage() {
         localStorage.setItem('favourites', JSON.stringify(favourites));
       }
     })
-    // window.location.reload();
+    // window.location.reload(); // dont think this is doing anything useful atm
   }
 
 
@@ -102,12 +102,12 @@ function RecipePage() {
     
     if (favorated === false) {
       addToFavourites(individualRecipe);
-      heart.style.color = 'red'
-      setFavorated(true)
+      heart.style.color = 'red';
+      setFavorated(true);
     } else  if (favorated === true){
       removeFromFavourites(individualRecipe);
-      heart.style.removeProperty('color')
-      setFavorated(false)
+      heart.style.removeProperty('color');
+      setFavorated(false);
     }
   
   };

@@ -5,31 +5,21 @@ import "./RecipePage.css";
 function RecipePageGuest() {
   const navigate = useNavigate();
   const individualRecipe = JSON.parse(localStorage.getItem("individual-result"));
-
   const recipeSteps = individualRecipe.analyzedInstructions[0].steps;
   const ingredients = individualRecipe.extendedIngredients;
+  
   const GoBack = () => {
     navigate("/RecipeSearchGuest");
   }
 
   return (
     <div className="maincontainer">
-      {/* <button className="btn btn-back" onClick={handleClick}>Nutrition</button> */}
-      <button className="btn btn-back" onClick={GoBack}>
+      <button className="btn btn-recipe" onClick={GoBack}>
         Go Back
       </button>
       <br />
       <br />
       <div className="recipe" id="printRecipe">
-        {/* <h1 className="foodTitle">{individualRecipe.title}</h1>
-        <br />
-        <div className="imageContainer">
-          <img
-            src={individualRecipe.image}
-            alt={individualRecipe.title}
-            className="selectedImage"
-          />
-        </div> */}
         <div className="container infocontainer">
           <div className="col-lg-8 col-md-6 col-sm-5 ms-3 mt-5 mb-5 instructionscontainer">
             <h1 className="titleHeader">Instructions</h1>
