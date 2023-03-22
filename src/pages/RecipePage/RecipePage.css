@@ -103,7 +103,22 @@
   .titleHeader {
     font-size: 24px;
   }
+}
 
+@media screen and (max-width: 1024px) {
+  body {
+    font-size: 12px !important;
+  }
+
+  .titleHeader {
+    font-size: 20px;
+  }
+
+  .btn {
+    font-size: 14px !important;
+    width: 4rem;
+    height: 3rem;
+  }
   .short-text.btn-fav,
   .btn-bk {
     display: inline-block;
@@ -127,22 +142,6 @@
 
   .full-text.btn-email {
     display: none;
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  body {
-    font-size: 12px !important;
-  }
-
-  .titleHeader {
-    font-size: 20px;
-  }
-
-  .btn {
-    font-size: 14px !important;
-    width: 4rem;
-    height: 3rem;
   }
 
 }
