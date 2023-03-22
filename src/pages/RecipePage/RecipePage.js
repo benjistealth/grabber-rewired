@@ -139,7 +139,7 @@ function RecipePage() {
             <p>{`Fat: ${caloricBreakdown.percentFat}%`}</p>
             <p>{`Protein: ${caloricBreakdown.percentProtein}%`}</p>
           </div>
-          <div className="col-lg-7 col-md-4 col-sm-4 ms-3 mt-5 mb-5 instructionscontainer">
+          <div className="col-lg-6 col-md-4 col-sm-4 ms-3 mt-5 mb-5 instructionscontainer">
             <h1 className="titleHeader">Instructions</h1>
             {recipeSteps.map((recipeStep, index) => (
               <p className="instructions mt-2" key={index}>{`${index + 1}.)  ${recipeStep.step
