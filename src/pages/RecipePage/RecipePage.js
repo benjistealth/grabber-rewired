@@ -82,7 +82,7 @@ function RecipePage() {
         localStorage.setItem('favourites', JSON.stringify(favourites));
       }
     })
-    window.location.reload();
+    // window.location.reload();
   }
 
 
@@ -117,32 +117,44 @@ function RecipePage() {
   };
 
 
-
   return (
     <div className="container maincontainer">
 
       <div className="btn-box container">
 
         <div className="btn-box-left">
-          <button className="btn btn-recipe" onClick={GoBack}>
+          <button className="btn btn-recipe btn-bk" onClick={GoBack}>
             <p>Go Back</p>
           </button>
-          {/* <br /> */}
-          <button className="btn btn-recipe btn-fav" onClick={setFavourite}>
+
+          <button className="btn btn-recipe full-text btn-fav" onClick={setFavourite}>
             {favorated ? 'Remove Favourite' : 'Add Favourite'} <span id="heart" style={{ color: hasObject ? "red" : "grey" }}>♥</span>
           </button>
-          {/* <br /> */}
+
+          <button className="btn btn-recipe short-text btn-fav" onClick={setFavourite}>
+            {favorated ? '- Fav' : '+ Fav'} <span id="heart" style={{ color: hasObject ? "red" : "grey" }}>♥</span>
+          </button>
+
         </div>
 
         <div className="btn-box-right">
-          <button className="btn btn-recipe" onClick={printRecipe}>
+          <button className="btn btn-recipe full-text btn-print" onClick={printRecipe}>
             Print Recipe
           </button>
-          {/* <br /> */}
-          <button className="btn btn-recipe" onClick={EmailRecipe}>
+
+          <button className="btn btn-recipe short-text btn-print" onClick={printRecipe}>
+            Print
+          </button>
+
+          <button className="btn btn-recipe full-text btn-email" onClick={EmailRecipe}>
             Email yourself THIS recipe
           </button>
-          {/* <br /> */}
+
+          <button className="btn btn-recipe short-text btn-email" onClick={EmailRecipe}>
+            Email
+          </button>
+
+
         </div>
 
       </div> 

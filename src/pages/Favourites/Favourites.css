@@ -6,37 +6,6 @@
     margin: 0;
 }
 
-.btn-box {
-    display: flex;
-    flex-direction: row;
-    /* width: 100vw; */
-    justify-content: space-between;
-}
-
-.btn-box-bk {
-    display: flex;
-    /* flex-direction: row; */
-    justify-content: flex-start;
-    margin-left: 0;
-    padding-left: 0;
-}
-
-.btn-box-util {
-    display: flex;
-    /* flex-direction: row; */
-    margin-left: 20vw;
-    justify-content: center;
-}
-
-.btn-back,
-.btn-print,
-.btn-email {
-    /* display: flex; */
-    /* border: .5px solid white !important; */
-    margin: 5px;
-    width: 10rem;
-}
-
 .foodTitle {
     text-align: center;
     text-decoration: underline;

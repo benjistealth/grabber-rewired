@@ -37,7 +37,7 @@ function FavouriteRecipePage() {
         console.log("removed from favourites")
       }
     })
-    window.location.reload();
+    // window.location.reload();
   };
 
   // useEffect(() => {
@@ -109,7 +109,7 @@ function FavouriteRecipePage() {
           </button>
           {/* <br /> */}
           <button className="btn btn-recipe btn-fav" onClick={() => removeFavourite(individualRecipe)}>
-            Remove Favourite <span id="heart" style={{ color: hasObject ? "red" : "white" }}>♥</span>
+            Remove Favourite <span id="heart" style={{ color: hasObject ? "red" : "grey" }}>♥</span>
           </button>
           {/* <br /> */}
 

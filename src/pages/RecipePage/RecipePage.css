@@ -11,33 +11,57 @@
   display: flex;
   flex-direction: row;
   width: 80vw;
-  /* justify-content: space-between; */
+  justify-content: space-between;
 }
 
-.btn-box.btn-box-left {
-  /* display: flex; */
-  /* flex-direction: row; */
-  /* justify-content: flex-start; */
-  /* margin-left: 1rem; */
-  /* padding-left: 0;  */
+.btn-box-left {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-left: 1rem;
+  padding: 0;
+  margin: 0;
 }
 
-.btn-box.btn-box-right {
-  /* display: flex; */
-  /* justify-content: flex-end; */
-  /* margin-right: 1rem; */
-  /* justify-content: center; */
+.btn-box-right {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 1rem;
+  padding: 0;
+  margin: 0;
 }
 
 .btn-recipe {
   height: 5rem;
   width: 10rem;
-  margin: 1rem;
+  /* margin: 1rem; */
 }
 
-/* #heart {
-  color: red !important;
+/* // Hide short text by default (resolution > 1200px) */
+.short-text.btn-fav {
+  display: none;
+}
+
+.short-text.btn-email {
+  display: none;
+}
+
+.short-text.btn-print {
+  display: none;
+}
+
+
+/* .btn-fav,
+.btn-bk {
+ margin: 1rem;
 } */
+
+.btn-print,
+.btn-email,
+.btn-fav,
+.btn-bk {
+  margin: 1rem;
+}
 
 .foodTitle {
   text-align: center;
@@ -68,7 +92,7 @@
 }
 
 .recipe {
-    background: black;
+  background: black;
 }
 
 @media screen and (max-width: 1216px) {
@@ -79,6 +103,31 @@
   .titleHeader {
     font-size: 24px;
   }
+
+  .short-text.btn-fav,
+  .btn-bk {
+    display: inline-block;
+  }
+
+  .full-text.btn-fav {
+    display: none;
+  }
+
+  .short-text.btn-print {
+    display: inline-block;
+  }
+
+  .full-text.btn-print {
+    display: none;
+  }
+
+  .short-text.btn-email {
+    display: inline-block;
+  }
+
+  .full-text.btn-email {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -88,6 +137,12 @@
 
   .titleHeader {
     font-size: 20px;
+  }
+
+  .btn {
+    font-size: 14px !important;
+    width: 4rem;
+    height: 3rem;
   }
 
 }
@@ -102,7 +157,9 @@
   }
 
   .btn {
-    font-size: 14px !important;
+    font-size: 10px !important;
+    width: 4rem;
+    height: 3rem;
   }
 }
 
@@ -127,7 +184,7 @@
 
   .btn {
     font-size: 10px !important;
-    height: 2rem;
+    height: 3rem;
     width: 4rem;
   }
 
@@ -140,9 +197,10 @@
   .container.btn-box {
     flex-direction: row;
   }
-  .btn {
+
+  /* .btn {
     font-size: 5pt !important;
     height: 1rem;
     width: 2rem;
-  }
+  } */
 }
