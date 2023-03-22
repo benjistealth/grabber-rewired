@@ -7,7 +7,6 @@ function Toggle() {
   const [isToggled, setIsToggled] = useState(theme);
 
   const onToggle = () => {
-    console.log("onToggle called");
     setIsToggled(!isToggled);
     toggleTheme();
   };
