@@ -199,7 +199,7 @@
   }
 
   .container.btn-box {
-    flex-direction: row;
+    flex-direction: column;
   }
   .btn-bk-g {
     margin-left: 1rem;
@@ -209,7 +209,7 @@
 
 @media screen and (max-width: 450px) {
   .container.btn-box {
-    flex-direction: row;
+    flex-direction: column;
   }
 
   .btn-home {
