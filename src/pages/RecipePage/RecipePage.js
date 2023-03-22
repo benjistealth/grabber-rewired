@@ -2,36 +2,34 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import printJS from "print-js";
 import "./RecipePage.css";
-//import emailjs from '@emailjs/browser'; // - uncomment this and below to enable email sending
+import emailjs from '@emailjs/browser'; // - uncomment this and below to enable email sending
 // commented to conserve email allowance for required tests
 
 function RecipePage() {
   const navigate = useNavigate();
   const individualRecipe = JSON.parse(localStorage.getItem("individual-result"));
   const favourites = JSON.parse(localStorage.getItem('favourites')) || []; // retrieves the stored array from local storage or creates a new one if none exists
-
-  const [servingSize, setServingSize] = useState(individualRecipe.servings);
   const recipeSteps = individualRecipe.analyzedInstructions[0].steps;
   const ingredients = individualRecipe.extendedIngredients;
+  const caloricBreakdown = individualRecipe.nutrition.caloricBreakdown;
+  const [servingSize, setServingSize] = useState(individualRecipe.servings);
   const [favorated, setFavorated] = useState(favourites.some(favorate => favorate.id === individualRecipe.id));
   const [myArray, setMyArray] = useState([]);
-
   const heart = document.querySelector('#heart')
-  // console.log(favorated)
-  const GoBack = () => {
+
+  function GoBack() {
     navigate("/RecipeSearchContainer");
   };
 
-  const caloricBreakdown = individualRecipe.nutrition.caloricBreakdown;
 
-  const printRecipe = () => {
+  function printRecipe() {
     printJS({
       printable: "printRecipe",
       type: "html"
     });
   };
 
-  const EmailRecipe = (e) => {
+  function EmailRecipe(e) {
     e.preventDefault();
 
     const loggeduser = JSON.parse(localStorage.getItem("user"));
@@ -42,8 +40,6 @@ function RecipePage() {
     const r_url = individualRecipe.sourceUrl + "\n";
     const r_summary = individualRecipe.summary + "\n";
 
-    
-
     var templateParams = {
       user_name: user_name,
       user_email: user_email,
@@ -52,17 +48,12 @@ function RecipePage() {
       r_summary: r_summary
     };
 
-    console.log(templateParams); // test email send to console to conserve email allowance for testing
-
-    // emailjs.send(serviceID, templateID, templateParams, publicKey)
-  //   emailjs.send('service_4kxk2ps', 'template_qgabn5g', templateParams, 'NyspTPaNNuHG_EVwK')
-  //     .then(function (response) {
-  //       alert("Email Sent.....😍")
-  //     }, function (error) {
-  //       // console.log('FAILED...', error); swallow errors for marking :-)
-  //       alert("Email send error.....💩")
-  //     });
-
+    emailjs.send('service_4kxk2ps', 'template_qgabn5g', templateParams, 'NyspTPaNNuHG_EVwK')
+      .then(function (response) {
+        alert("Email Sent.....😍")
+      }, function (error) {
+        alert("Email send error.....💩")
+      });
   };
 
   function addToFavourites(recipe) {
@@ -82,9 +73,7 @@ function RecipePage() {
         localStorage.setItem('favourites', JSON.stringify(favourites));
       }
     })
-    // window.location.reload(); // dont think this is doing anything useful atm
   }
-
 
   useEffect(() => {
     const favourited = JSON.parse(localStorage.getItem("favourites"));
@@ -97,9 +86,7 @@ function RecipePage() {
   }
   
   function setFavourite(e) {
-    e.preventDefault();
-    console.log(e)
-    
+    e.preventDefault();    
     if (favorated === false) {
       addToFavourites(individualRecipe);
       heart.style.color = 'red';
@@ -109,56 +96,41 @@ function RecipePage() {
       heart.style.removeProperty('color');
       setFavorated(false);
     }
-  
   };
 
   function handleSlider(e) {
     setServingSize(e.target.value);
   };
 
-
   return (
     <div className="container maincontainer">
-
       <div className="btn-box container">
-
         <div className="btn-box-left">
           <button className="btn btn-recipe btn-bk" onClick={GoBack}>
             <p>Go Back</p>
           </button>
-
           <button className="btn btn-recipe full-text btn-fav" onClick={setFavourite}>
             {favorated ? 'Remove Favourite' : 'Add Favourite'} <span id="heart" style={{ color: hasObject ? "red" : "grey" }}>♥</span>
           </button>
-
           <button className="btn btn-recipe short-text btn-fav" onClick={setFavourite}>
             {favorated ? '- Fav' : '+ Fav'} <span id="heart" style={{ color: hasObject ? "red" : "grey" }}>♥</span>
           </button>
-
         </div>
-
         <div className="btn-box-right">
           <button className="btn btn-recipe full-text btn-print" onClick={printRecipe}>
             Print Recipe
           </button>
-
           <button className="btn btn-recipe short-text btn-print" onClick={printRecipe}>
             Print
           </button>
-
           <button className="btn btn-recipe full-text btn-email" onClick={EmailRecipe}>
             Email yourself THIS recipe
           </button>
-
           <button className="btn btn-recipe short-text btn-email" onClick={EmailRecipe}>
             Email
           </button>
-
-
         </div>
-
       </div> 
-
       <div className="recipe" id="printRecipe">
         <div className="container infocontainer">
           <div className="col-md-2 ms-3 mt-5 mb-5 instructionscontainer">
@@ -167,7 +139,7 @@ function RecipePage() {
             <p>{`Fat: ${caloricBreakdown.percentFat}%`}</p>
             <p>{`Protein: ${caloricBreakdown.percentProtein}%`}</p>
           </div>
-          <div className="col-lg-7 col-md-4 col-sm-4 ms-3 mt-5 mb-5 instructionscontainer">
+          <div className="col-lg-6 col-md-4 col-sm-4 ms-3 mt-5 mb-5 instructionscontainer">
             <h1 className="titleHeader">Instructions</h1>
             {recipeSteps.map((recipeStep, index) => (
               <p className="instructions mt-2" key={index}>{`${index + 1}.)  ${recipeStep.step

@@ -2,12 +2,10 @@ import React from "react";
 import { useNavigate } from 'react-router-dom';
 import RecipeCardDisplay from "../../components/HomeComponents/RecipeCardDisplay";
 import Wrapper from "../../components/HomeComponents/Wrapper";
-import "./Favourites.css";
+import "./FavouritesRecipeContainer.css";
 
-  
 function Favourites() {
   const storedResults = JSON.parse(localStorage.getItem("favourites"));
-
   const navigate = useNavigate();
 
   function homeButton() {
@@ -29,8 +27,15 @@ function Favourites() {
         navigate("/FavouriteRecipePage");
     }
 
+  const backgroundStyle = {
+    backgroundImage: `url("${localStorage.getItem('unsplashImage')}")`,
+    backgroundPosition: `center`,
+    backgroundRepeat: `no-repeat`,
+    backgroundSize: `cover`,
+  };
+
   return (
-    <div className="cardContainer">
+    <div style={backgroundStyle} className="cardContainer fav-cardContainer">
       <div className="container">
         <div className="btn-box-home container">
           <button className="btn btn-home" onClick={homeButton}>

@@ -22,6 +22,10 @@
 
   --comp-button-light: #1c1c1c;
   --comp-button-dark: #faf9f6;
+
+  --shadow-lg-light: 0 1rem 3rem rgba(0,0,0,.175)!important;
+  --shadow-lg-dark: 0 1rem 3rem rgba(255,255,255,.175) !important;
+
 }
 
 .light-theme {
@@ -32,6 +36,7 @@
   --bg-jumbotron: var(--bg-jumbotron-light);
   --comp-button: var(--comp-button-light);
   --bg-footer: var(--bg-footer-light);
+  --shadow-lg: var(--shadow-lg-light);
 }
 
 .dark-theme {
@@ -42,6 +47,7 @@
   --bg-jumbotron: var(--bg-jumbotron-dark);
   --comp-button: var(--comp-button-dark);
   --bg-footer: var(--bg-footer-dark);
+  --shadow-lg: var(--shadow-lg-dark);
 }
 
 html,
@@ -67,14 +73,11 @@ label {
   color: var(--text-primary) !important;
 } 
 
-
 button {
     color: var(--text-primary) !important;
     background-color: var(--bg-primary) !important;
     border-color: var(--comp-button) !important;
 } 
-
-
 
 .hero-body {
   background-color: var(--bg-jumbotron);
@@ -101,12 +104,12 @@ button {
     background-color: var(--bg-primary) !important;
 }
 
-
-
 .infocontainer {
     background-color: var(--bg-secondary) !important;
 } 
 
 #logincard, #signupcard {
     border-color: var(--text-primary) !important;
+    box-shadow: var(--shadow-lg) !important;
 } 
+

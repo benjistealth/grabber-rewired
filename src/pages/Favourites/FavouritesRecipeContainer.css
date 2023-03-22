@@ -6,6 +6,10 @@
     margin: 0;
 }
 
+.fav-cardContainer {
+  height: 120vh;
+}
+
 .foodTitle {
     text-align: center;
     text-decoration: underline;
@@ -33,10 +37,6 @@
 .custom-range {
     width: 80%;
 }
-
-/* .recipe {
-    background: black;
-} */
 
 @media screen and (max-width: 1216px) {
   body {
@@ -89,8 +89,4 @@
     flex: 0 0 auto;
     width: 25%;
     }
-
-    /* .btn {
-        font-size: 10px !important;
-    } */
 }

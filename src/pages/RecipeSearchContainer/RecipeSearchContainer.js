@@ -7,13 +7,22 @@ import Wrapper from "../../components/HomeComponents/Wrapper";
 import UnsplashAPI from "../../utils/unsplashAPI";
 import "./RecipeSearchContainer.css";
 
-
 function RecipeSearchContainer() {
-  const storedResults = JSON.parse(localStorage.getItem('recipe-results'));
+  const storedResults = JSON.parse(localStorage.getItem("recipe-results"));
   const [spoonacularResults, setSpoonacularResults] = useState(storedResults);
   const [search, setSearch] = useState("");
-  const [unsplashImage, setBackgroundImg] = useState(localStorage.getItem('unsplashImage')); // draws background image from local storage
+  const [disabled, setDisabled] = useState(true);
+  const [unsplashImage, setBackgroundImg] = useState(
+    localStorage.getItem("unsplashImage")
+  ); // draws background image from local storage
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const favouritesExists = localStorage.getItem("favourites");
+    if (favouritesExists) {
+      setDisabled(false);
+    }
+  }, []);
 
   function handleChange(e) {
     setSearch(e.target.value);
@@ -21,71 +30,58 @@ function RecipeSearchContainer() {
 
   function handleFormSubmit(e) {
     e.preventDefault();
-    localStorage.setItem('recipe-results', JSON.stringify(spoonacularResults));
+    localStorage.setItem("recipe-results", JSON.stringify(spoonacularResults));
     searchRecipes(search);
   }
 
   function HandleCardClick(e) {
-    const recipeId = parseInt(e.target.alt)
+    const recipeId = parseInt(e.target.alt);
     for (let i = 0; i < spoonacularResults.length; i++) {
       if (spoonacularResults[i].id === recipeId) {
-        localStorage.setItem('individual-result', JSON.stringify(spoonacularResults[i]));
+        localStorage.setItem(
+          "individual-result",
+          JSON.stringify(spoonacularResults[i])
+        );
       }
     }
     navigate("/RecipePage");
-  };
+  }
 
   function testingButton() {
-    navigate('/Testing');
+    navigate("/Testing");
   }
 
   function homeButton() {
-    navigate('/');
+    navigate("/");
   }
 
   function favouritesButton() {
-    navigate('/Favourites');
+    navigate("/Favourites");
   }
 
-  
-  const [disabled, setDisabled] = useState(true);
+  function searchRecipes(query) {
+    SpoonacularAPI(query).then((results) => {
+      if (results != null) {
+        // catch empty payload coming back and skip save
+        setSpoonacularResults(results);
+        localStorage.setItem("recipe-results", JSON.stringify(results)); // save new results to local storage
+      }
+    });
 
-  useEffect(() => {
-    const favouritesExists = localStorage.getItem('favourites');
-    if (favouritesExists) {
-      setDisabled(false);
-    }
-  }, []);
-
-  const searchRecipes = (query) => {
-    SpoonacularAPI(query)
-      .then((results) => {
-        if (results != null) { // catch empty payload coming back and skip save
-          setSpoonacularResults(results);
-          localStorage.setItem('recipe-results', JSON.stringify(results)); // save new results to local storage
-        }
-      })
-      .catch((err) => {
-        // throw err; swallow errors
-      })
-
-    UnsplashAPI(search)
-      .then((results) => {
-        const backgroundImage = results[Math.floor(Math.random() * 9)].urls.regular;
-        setBackgroundImg(backgroundImage);
-        localStorage.setItem('unsplashImage', backgroundImage);
-      })
-      .catch((err) => {
-        // throw err; swallow errors for marking and demo
-      })
-  };
+    UnsplashAPI(search).then((results) => {
+      const backgroundImage =
+        results[Math.floor(Math.random() * 9)].urls.regular;
+      setBackgroundImg(backgroundImage);
+      localStorage.setItem("unsplashImage", backgroundImage);
+    });
+  }
 
   const backgroundStyle = {
     backgroundImage: `url("${unsplashImage}")`,
     backgroundPosition: `center`,
     backgroundRepeat: `no-repeat`,
     backgroundSize: `cover`,
-  }
+  };
 
   return (
     <div style={backgroundStyle} className="cardContainer">
@@ -96,7 +92,6 @@ function RecipeSearchContainer() {
           value={search}
           onClick={handleFormSubmit}
         />
-
         <div className="btn-box-home container">
           <button className="btn btn-home" onClick={testingButton}>
             TESTING PAGE
@@ -135,18 +130,3 @@ function RecipeSearchContainer() {
 }
 
 export default RecipeSearchContainer;
-
-
-// cards clickable. event handlers DONE
-
-// clicked card shows correct json data in console log DONE
-
-// react router create new page DONE
-
-// take that json data and show it on new page DONE
-
-// react router new page will have buttons. event handlers needed for those DONE
-
-// Ben, working on send email function & clean up file structure
-
-// Toby, working on nutritional info

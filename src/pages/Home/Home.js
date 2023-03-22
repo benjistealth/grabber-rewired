@@ -2,12 +2,9 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import spoonacularJSON from "../../utils/spoonacularJSON.json";
 import "./Home.css";
-// on app load, check local storage for user search data
-// if we dont have any user searches saved, load JSON into local storage as starting data - note 27 recipes in this lump
+
 if(localStorage.getItem('recipe-results') === null) {localStorage.setItem('recipe-results', JSON.stringify(spoonacularJSON));}
 if(localStorage.getItem('unsplashImage') == null) {localStorage.setItem('unsplashImage',"https://raw.githubusercontent.com/benjistealth/grabber-rewired/main/src/assets/images/pipie.JPG");}
-
-
 
 function Home() {
     const navigate = useNavigate();
@@ -42,20 +39,12 @@ function Home() {
                 </ul>
             </div>
             
-
             <div className="container row is-centered px-2">
             <h4 className="content pt-6 has-text-centered">User Registration / Login</h4>
                 <button className="mt-2 button are-medium is responsive is-link is-outlined hom-log-sig" type="button" onClick={Login}>Login</button>
                 <button className="mt-2 button are-medium is responsive is-link is-outlined hom-log-sig" type="button" onClick={Signup}>Register</button>
                 <button className="mt-2 button are-medium is responsive is-link is-outlined hom-log-sig" type="button" onClick={Guest}>Continue as Guest</button>
             </div>
-
-            <div>
-                <br/> 
-                {/* blank space to compensate for footer issues */}
-                <br/>
-            </div>
-
         </div>
     );
 }

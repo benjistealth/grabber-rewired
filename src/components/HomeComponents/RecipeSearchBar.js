@@ -1,7 +1,6 @@
 import React from "react";
 
 function RecipeSearchBar(props) {
-
   return (
     <div id="search-form">
       <div className="content">

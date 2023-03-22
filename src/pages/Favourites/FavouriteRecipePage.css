@@ -2,12 +2,9 @@
     display: flex;
     flex-direction: column;
     max-height: 100vh;
-    /* background: black; */
     padding: 0;
     margin: 0;
 }
-
-
 
 .foodTitle {
     text-align: center;
@@ -24,7 +21,6 @@
 
 .infocontainer {
     display: flex;
-    /* background-color: white; */
     border-radius: 10px;
 }
 
@@ -66,10 +62,6 @@
   .titleHeader {
     font-size: 14px;
   }
-
-  /* .btn {
-        font-size: 14px !important;
-    } */
 }
 @media screen and (max-width: 576px) {
   body {
@@ -89,8 +81,4 @@
     flex: 0 0 auto;
     width: 25%;
     }
-
-    /* .btn {
-        font-size: 10px !important;
-    } */
 }
