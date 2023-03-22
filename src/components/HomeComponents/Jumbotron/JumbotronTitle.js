@@ -24,7 +24,7 @@ function JumbotronTitle() {
     case "/RecipeSearchGuest":
       jumbotronTitle = "Recipe Search";
       break;
-    case "/Favourites":
+    case "/FavouritesRecipeContainer":
       jumbotronTitle = "Favourite Recipes";
       break;
     case "/RecipePage":
