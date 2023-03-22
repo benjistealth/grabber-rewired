@@ -29,6 +29,7 @@ function Login() {
     else if (input.email === loggeduser.email && input.password === loggeduser.password) {
       localStorage.setItem("loggedin", true);
       navigate("/RecipeSearchContainer");
+      window.location.reload();
     }
     else {
       alert("Your username or password are incorrect. Please try again");
