@@ -7,18 +7,18 @@ function RecipePageGuest() {
   const individualRecipe = JSON.parse(localStorage.getItem("individual-result"));
   const recipeSteps = individualRecipe.analyzedInstructions[0].steps;
   const ingredients = individualRecipe.extendedIngredients;
-  
+
   const GoBack = () => {
     navigate("/RecipeSearchGuest");
   }
 
   return (
     <div className="maincontainer">
-      <button className="btn btn-recipe" onClick={GoBack}>
+      <div className="container btn-box"> 
+      <button className="btn btn-recipe btn-bk-g" onClick={GoBack}>
         Go Back
       </button>
-      <br />
-      <br />
+      </div>
       <div className="recipe" id="printRecipe">
         <div className="container infocontainer">
           <div className="col-lg-8 col-md-6 col-sm-5 ms-3 mt-5 mb-5 instructionscontainer">
