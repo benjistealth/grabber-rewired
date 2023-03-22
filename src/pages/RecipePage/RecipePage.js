@@ -107,7 +107,7 @@ function RecipePage() {
       <div className="btn-box container">
         <div className="btn-box-left">
           <button className="btn btn-recipe btn-bk" onClick={GoBack}>
-            <p>Go Back</p>
+            Go Back
           </button>
           <button className="btn btn-recipe full-text btn-fav" onClick={setFavourite}>
             {favorated ? 'Remove Favourite' : 'Add Favourite'} <span id="heart" style={{ color: hasObject ? "red" : "grey" }}>♥</span>

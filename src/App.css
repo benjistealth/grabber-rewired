@@ -73,6 +73,13 @@ label {
   color: var(--text-primary) !important;
 } 
 
+.btn:hover {
+  background-color: var(--comp-button) !important;
+  color: var(--bg-primary) !important;
+  border-color: var(--bg-primary) !important;
+    /* box-shadow: var(--shadow-lg) !important; */
+}
+
 button {
     color: var(--text-primary) !important;
     background-color: var(--bg-primary) !important;

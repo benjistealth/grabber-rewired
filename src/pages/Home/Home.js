@@ -41,9 +41,9 @@ function Home() {
             
             <div className="container row is-centered px-2">
             <h4 className="content pt-6 has-text-centered">User Registration / Login</h4>
-                <button className="mt-2 button are-medium is responsive is-link is-outlined hom-log-sig" type="button" onClick={Login}>Login</button>
-                <button className="mt-2 button are-medium is responsive is-link is-outlined hom-log-sig" type="button" onClick={Signup}>Register</button>
-                <button className="mt-2 button are-medium is responsive is-link is-outlined hom-log-sig" type="button" onClick={Guest}>Continue as Guest</button>
+                <button className="btn mt-2 button are-medium is responsive is-link is-outlined hom-log-sig" type="button" onClick={Login}>Login</button>
+                <button className="btn mt-2 button are-medium is responsive is-link is-outlined hom-log-sig" type="button" onClick={Signup}>Register</button>
+                <button className="btn mt-2 button are-medium is responsive is-link is-outlined hom-log-sig" type="button" onClick={Guest}>Continue as Guest</button>
             </div>
         </div>
     );
