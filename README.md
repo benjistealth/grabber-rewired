@@ -9,6 +9,8 @@
     <li>
       <a href="#description">Description</a>
       <ul>
+        <li><a href="#demo">Demo</a></li>
+        <li><a href="#screenshots">Screenshots</a></li>
         <li><a href="#user-story">User Story</a></li>
         <li><a href="#project-requirements">Project Requirements</a></li>
         <li><a href="#built-with">Built With</a></li>
@@ -28,6 +30,28 @@
 A web application to grab recipes with ingredients and instructions by inputting some basic search criteria
 <br>
 
+## Demo
+
+ - You can have a look around the deployed application here  - https://grabber-rewired.netlify.app/
+
+
+## Screenshots
+
+# Screenshot of the home page
+
+    
+  <img alt="Screenshot_1" src="./src/assets/images/screenshot1.png">
+
+
+# Screenshot of the registration form
+
+
+  <img alt="Screenshot_2" src="./src/assets/images/screenshot2.png">
+
+# Screenshot of chosen recipe information page
+
+
+  <img alt="Screenshot_2" src="./src/assets/images/screenshot3.png">
 
 ## User Story
 
@@ -73,6 +97,8 @@ You will then see a selection of recipe cards with images and titles which, when
 Don't like what you see? just click the back button and try another recipe, or search for a new ingredient to have a new list generated.<br/>
 When you have found a recipe you like, you then have the option to save the recipe, print it out, or email it to yourself or a friend.<br/>
 Then all you have to do is cook! Unfortunately, we can't help you with that part!
+
+Try it !! - https://grabber-rewired.netlify.app/
 
 
 <p align="right">(<a href="#table-of-contents">back to top</a>)</p>
