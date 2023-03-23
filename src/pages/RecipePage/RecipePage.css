@@ -102,6 +102,10 @@
   .home-title {
     font-size: 10px;
   }
+  .swiper {
+    width: 80%;
+    height: auto;
+  }
 }
 
 @media screen and (max-width: 1024px) {
