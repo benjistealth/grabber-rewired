@@ -20,7 +20,7 @@ import slide_image_5 from '../../assets/images/food_5.jpg';
 function Cube() {
     return (
         <div className="container is-centered carousel-container">
-            <h1 className="carousel-heading has-text-centered"> Grabber-Rewired </h1>
+            <h1 className="carousel-heading has-text-centered"> {'<Grabber Rewired />'} </h1>
             <Swiper
                 effect={'cube'}
                 grabCursor={true}
