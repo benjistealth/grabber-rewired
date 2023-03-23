@@ -40,7 +40,7 @@ function Login() {
       <div className="container">
         <div className="row d-flex justify-content-center">
           <div className="col-12 col-md-8 col-lg-6">
-            <div className="card  shadow-lg" id="logincard">
+            <div className="card shadow-lg" id="logincard">
               <div className="card-body p-5">
                 <form className="mb-3 mt-md-4" onSubmit={handleLogin}>
                   <h2 className="fw-bold mb-2 text-uppercase ">

@@ -4,7 +4,7 @@ function JumbotronTitle() {
   const location = useLocation();
   const path = location.pathname;
   const individualRecipe = JSON.parse(
-    localStorage.getItem("individual-result")
+    localStorage.getItem("individual-grabber")
   );
   let jumbotronTitle;
 

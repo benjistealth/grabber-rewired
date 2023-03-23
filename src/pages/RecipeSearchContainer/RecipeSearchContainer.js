@@ -8,7 +8,7 @@ import UnsplashAPI from "../../utils/unsplashAPI";
 import "./RecipeSearchContainer.css";
 
 function RecipeSearchContainer() {
-  const storedResults = JSON.parse(localStorage.getItem("recipe-results"));
+  const storedResults = JSON.parse(localStorage.getItem("grabber-results"));
   const [spoonacularResults, setSpoonacularResults] = useState(storedResults);
   const [search, setSearch] = useState("");
   const [disabled, setDisabled] = useState(true);
@@ -18,7 +18,7 @@ function RecipeSearchContainer() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const favouritesExists = localStorage.getItem("favourites");
+    const favouritesExists = localStorage.getItem("favourites-grabber");
     if (favouritesExists) {
       setDisabled(false);
     }
@@ -30,7 +30,7 @@ function RecipeSearchContainer() {
 
   function handleFormSubmit(e) {
     e.preventDefault();
-    localStorage.setItem("recipe-results", JSON.stringify(spoonacularResults));
+    localStorage.setItem("grabber-results", JSON.stringify(spoonacularResults));
     searchRecipes(search);
   }
 
@@ -39,7 +39,7 @@ function RecipeSearchContainer() {
     for (let i = 0; i < spoonacularResults.length; i++) {
       if (spoonacularResults[i].id === recipeId) {
         localStorage.setItem(
-          "individual-result",
+          "individual-grabber",
           JSON.stringify(spoonacularResults[i])
         );
       }
@@ -64,7 +64,7 @@ function RecipeSearchContainer() {
       if (results != null) {
         // catch empty payload coming back and skip save
         setSpoonacularResults(results);
-        localStorage.setItem("recipe-results", JSON.stringify(results)); // save new results to local storage
+        localStorage.setItem("grabber-results", JSON.stringify(results)); // save new results to local storage
       }
     });
 

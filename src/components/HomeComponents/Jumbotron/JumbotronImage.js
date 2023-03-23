@@ -9,7 +9,7 @@ function JumbotronImage() {
   const location = useLocation();
   const path = location.pathname;
   const individualRecipe = JSON.parse(
-    localStorage.getItem("individual-result")
+    localStorage.getItem("individual-grabber")
   );
   let jumbotronImage;
   let screenshot;
@@ -36,7 +36,7 @@ function JumbotronImage() {
     case "/RecipeSearchGuest":
       jumbotronImage = screenshot;
       break;
-    case "/Favourites":
+    case "/FavouritesRecipeContainer":
       jumbotronImage = screenshot;
       break;
     case "/RecipePage":

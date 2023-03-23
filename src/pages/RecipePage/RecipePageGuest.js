@@ -4,7 +4,7 @@ import "./RecipePage.css";
 
 function RecipePageGuest() {
   const navigate = useNavigate();
-  const individualRecipe = JSON.parse(localStorage.getItem("individual-result"));
+  const individualRecipe = JSON.parse(localStorage.getItem("individual-grabber"));
   const recipeSteps = individualRecipe.analyzedInstructions[0].steps;
   const ingredients = individualRecipe.extendedIngredients;
 
