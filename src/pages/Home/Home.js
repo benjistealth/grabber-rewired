@@ -4,7 +4,7 @@ import spoonacularJSON from "../../utils/spoonacularJSON.json";
 import "./Home.css";
 import Cube from "../../components/HomeComponents/Cube";
 
-if(localStorage.getItem('recipe-results') === null) {localStorage.setItem('recipe-results', JSON.stringify(spoonacularJSON));}
+if(localStorage.getItem('grabber-results') === null) {localStorage.setItem('grabber-results', JSON.stringify(spoonacularJSON));}
 if(localStorage.getItem('unsplashImage') == null) {localStorage.setItem('unsplashImage',"https://raw.githubusercontent.com/benjistealth/grabber-rewired/main/src/assets/images/pipie.JPG");}
 
 function Home() {

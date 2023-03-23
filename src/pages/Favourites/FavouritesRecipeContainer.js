@@ -5,7 +5,7 @@ import Wrapper from "../../components/HomeComponents/Wrapper";
 import "./FavouritesRecipeContainer.css";
 
 function Favourites() {
-  const storedResults = JSON.parse(localStorage.getItem("favourites"));
+  const storedResults = JSON.parse(localStorage.getItem("favourites-grabber"));
   const navigate = useNavigate();
 
   function homeButton() {
@@ -20,7 +20,7 @@ function Favourites() {
       const recipeId = parseInt(e.target.alt);
         for (let i = 0; i < storedResults.length; i++) {
             if (storedResults[i].id === recipeId) {
-                localStorage.setItem("individual-result", JSON.stringify(storedResults[i])
+                localStorage.setItem("individual-grabber", JSON.stringify(storedResults[i])
                 );
             }
         }

@@ -8,7 +8,7 @@ import UnsplashAPI from "../../utils/unsplashAPI";
 import "./RecipeSearchContainer.css";
 
 function RecipeSearchGuest() {
-  const storedResults = JSON.parse(localStorage.getItem('recipe-results')) || []; // checks for stored data or uses empty array if none found
+  const storedResults = JSON.parse(localStorage.getItem('grabber-results')) || []; // checks for stored data or uses empty array if none found
   const [spoonacularResults, setSpoonacularResults] = useState(storedResults);
   const [search, setSearch] = useState("");
   const [unsplashImage, setBackgroundImg] = useState(localStorage.getItem('unsplashImage')); // draws background image from local storage
@@ -19,7 +19,7 @@ function RecipeSearchGuest() {
 
   function handleFormSubmit(e) {
     e.preventDefault();
-    localStorage.setItem('recipe-results', JSON.stringify(spoonacularResults));
+    localStorage.setItem('grabber-results', JSON.stringify(spoonacularResults));
     searchRecipes(search);
   }
 
@@ -27,7 +27,7 @@ function RecipeSearchGuest() {
     const recipeId = parseInt(e.target.alt)
     for (let i = 0; i < spoonacularResults.length; i++) {
       if (spoonacularResults[i].id === recipeId) {
-        localStorage.setItem('individual-result', JSON.stringify(spoonacularResults[i]));
+        localStorage.setItem('individual-grabber', JSON.stringify(spoonacularResults[i]));
       }
     }
     navigate("/RecipePageGuest");
@@ -41,7 +41,7 @@ function RecipeSearchGuest() {
     SpoonacularAPI(query)
       .then((results) => {
         setSpoonacularResults(results);
-        localStorage.setItem('recipe-results', JSON.stringify(results)); // save new results to local storage
+        localStorage.setItem('grabber-results', JSON.stringify(results)); // save new results to local storage
       })
 
     UnsplashAPI(search)
