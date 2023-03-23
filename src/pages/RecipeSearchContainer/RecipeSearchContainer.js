@@ -47,9 +47,9 @@ function RecipeSearchContainer() {
     navigate("/RecipePage");
   }
 
-  function testingButton() {
-    navigate("/Testing");
-  }
+  // function testingButton() {
+  //   navigate("/Testing");
+  // }
 
   function homeButton() {
     navigate("/");
@@ -93,9 +93,9 @@ function RecipeSearchContainer() {
           onClick={handleFormSubmit}
         />
         <div className="btn-box-home container">
-          <button className="btn btn-home" onClick={testingButton}>
+          {/* <button className="btn btn-home" onClick={testingButton}>
             TESTING PAGE
-          </button>
+          </button> */}
 
           <button className="btn btn-home" onClick={homeButton}>
             HOME PAGE
