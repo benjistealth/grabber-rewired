@@ -23,6 +23,9 @@
   --comp-button-light: #1c1c1c;
   --comp-button-dark: #faf9f6;
 
+  --hover-button-light: rgba(28, 28, 28, 0.8);
+  --hover-button-dark: rgba(250, 249, 246, 0.8);
+
   --shadow-lg-light: 0 1rem 3rem rgba(0,0,0,.175)!important;
   --shadow-lg-dark: 0 1rem 3rem rgba(255,255,255,.175) !important;
 
@@ -35,6 +38,7 @@
   --bg-secondary: var(--bg-secondary-light);
   --bg-jumbotron: var(--bg-jumbotron-light);
   --comp-button: var(--comp-button-light);
+  --hover-button: var(--hover-button-light);
   --bg-footer: var(--bg-footer-light);
   --shadow-lg: var(--shadow-lg-light);
 }
@@ -46,6 +50,7 @@
   --bg-secondary: var(--bg-secondary-dark);
   --bg-jumbotron: var(--bg-jumbotron-dark);
   --comp-button: var(--comp-button-dark);
+  --hover-button: var(--hover-button-dark);
   --bg-footer: var(--bg-footer-dark);
   --shadow-lg: var(--shadow-lg-dark);
 }
@@ -74,7 +79,7 @@ label {
 } 
 
 .btn:hover {
-  background-color: var(--comp-button) !important;
+  background-color: var(--hover-button) !important;
   color: var(--bg-primary) !important;
   border-color: var(--bg-primary) !important;
     /* box-shadow: var(--shadow-lg) !important; */
