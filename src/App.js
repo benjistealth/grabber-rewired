@@ -14,6 +14,7 @@ import Login from "./pages/SignUpLogin/Login";
 import Home from "./pages/Home/Home";
 import FavouritesRecipeContainer from "./pages/Favourites/FavouritesRecipeContainer";
 import FavouriteRecipePage from "./pages/Favourites/FavouriteRecipePage";
+import Cube from "./components/HomeComponents/Cube";
 
 function App() {
   const { theme } = useContext(ThemeContext);
@@ -43,6 +44,7 @@ function App() {
                 path="/FavouriteRecipePage"
                 element={<FavouriteRecipePage />}
               />
+               <Route path="/Cube" element={<Cube />} />
             </Routes>
           </div>
         </Router>

@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import spoonacularJSON from "../../utils/spoonacularJSON.json";
 import "./Home.css";
+import Cube from "../../components/HomeComponents/Cube";
 
 if(localStorage.getItem('recipe-results') === null) {localStorage.setItem('recipe-results', JSON.stringify(spoonacularJSON));}
 if(localStorage.getItem('unsplashImage') == null) {localStorage.setItem('unsplashImage',"https://raw.githubusercontent.com/benjistealth/grabber-rewired/main/src/assets/images/pipie.JPG");}
@@ -25,20 +26,12 @@ function Home() {
         <div className="container content home-main">
             <div className="spiel row content">
                 <h1 className="home-title has-text-centered">
-                    Welcome to the offspring from the infamous Recipe Grabber
+                    Come on in and search for some tasty snacks ! 😋
                 </h1>
-                <h3 className="is-size-3 features py-2">Stacked with new features:</h3>
-                <ul className="is-size-4">
-                    <li>User Signup/Login</li>
-                    <li>Guest login with limited features</li>
-                    <li>Print recipe info when logged in</li>
-                    <li>Email recipe info when logged in</li>
-                    <li>New chosen recipe pages</li>
-                    <li>Adjust serving amounts</li>
-                    <li>Generated in React for responsive page changes</li>
-                </ul>
             </div>
-            
+            <div className="container">
+            < Cube />
+            </div>
             <div className="container row is-centered px-2">
             <h4 className="content pt-6 has-text-centered">User Registration / Login</h4>
                 <button className="btn mt-2 button are-medium is responsive is-link is-outlined hom-log-sig" type="button" onClick={Login}>Login</button>

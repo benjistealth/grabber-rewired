@@ -1,0 +1,51 @@
+/* #app { height: 100% }
+html,
+body {
+  position: relative;
+  height: 100%;
+} */
+html {
+  /* font-size: 62.5%; */
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  /* display: flex; */
+  width: 60%;
+  height: auto;
+  position: absolute;
+  left: 0%;
+  top: 10%;
+  margin-left: 0;
+  margin-top: 0;
+  /* padding-bottom: 1rem; */
+  /* z-index: 1; */
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
+
+.slider-controler {
+  position: relative;
+  bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
