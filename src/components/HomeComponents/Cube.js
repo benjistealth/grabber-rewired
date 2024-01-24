@@ -9,7 +9,7 @@ import 'swiper/css/navigation';
 
 
 
-import { EffectFade, EffectCube, Pagination, Navigation } from 'swiper';
+import { EffectFade, EffectCube, Pagination, Navigation, Autoplay } from 'swiper';
 
 import slide_image_1 from '../../assets/images/food_1.jpg';
 import slide_image_2 from '../../assets/images/food_2.jpg';
@@ -17,12 +17,17 @@ import slide_image_3 from '../../assets/images/food_3.jpg';
 import slide_image_4 from '../../assets/images/food_4.jpg';
 import slide_image_5 from '../../assets/images/food_5.jpg';
 
+
+
 function Cube() {
+   
     return (
         <div className="container is-centered carousel-container">
             <h1 className="carousel-heading has-text-centered"> {'<Grabber Rewired />'} </h1>
             <Swiper
                 effect={'cube'}
+                autoplay={true}
+                delay={500}
                 grabCursor={true}
                 centeredSlides={true}
                 loop={true}
@@ -40,7 +45,7 @@ function Cube() {
                     prevEl: '.swiper-button-prev',
                     clickable: false,
                 }}
-                modules={[EffectFade, EffectCube, Pagination, Navigation]}
+                modules={[EffectFade, EffectCube, Pagination, Navigation, Autoplay]}
                 className="swiper_container"
             >
                 <SwiperSlide>
@@ -61,8 +66,8 @@ function Cube() {
 
 
                 <div className="slider-controler">
-                    <div className="swiper-button-prev slider-arrow"></div>
                     <div className="swiper-button-next slider-arrow"></div>
+                    <div className="swiper-button-prev slider-arrow"></div>
                 </div>
 
             </Swiper>

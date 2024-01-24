@@ -18,9 +18,13 @@ body {
   padding: 0;
 }
 
+.carousel-container {
+  justify-items: center;
+}
+
 .swiper {
   /* display: flex; */
-  width: 65%;
+  width: 80%;
   height: auto;
   position: absolute;
   left: 0%;
@@ -44,8 +48,10 @@ body {
 
 .slider-controler {
   position: relative;
-  bottom: 2rem;
+  bottom: -4rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 10rem;
+  /* margin-top: 50rem; */
 }
