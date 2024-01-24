@@ -8,6 +8,6 @@ body {
 }
 
 .mainbody{
-  height: calc(120vh + 400px);
+  height: auto;
 }
 

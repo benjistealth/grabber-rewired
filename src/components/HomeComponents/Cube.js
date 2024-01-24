@@ -27,7 +27,7 @@ function Cube() {
             <Swiper
                 effect={'cube'}
                 autoplay={true}
-                delay={500}
+                delay={50}
                 grabCursor={true}
                 centeredSlides={true}
                 loop={true}
@@ -43,7 +43,7 @@ function Cube() {
                 navigation={{
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
-                    clickable: false,
+                    clickable: true,
                 }}
                 modules={[EffectFade, EffectCube, Pagination, Navigation, Autoplay]}
                 className="swiper_container"

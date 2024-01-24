@@ -6,7 +6,7 @@ body {
 } */
 html {
   /* font-size: 62.5%; */
-  scroll-behavior: smooth;
+  scroll-behavior:smooth;
 }
 
 body {
@@ -20,17 +20,20 @@ body {
 
 .carousel-container {
   justify-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 .swiper {
   /* display: flex; */
-  width: 80%;
+  width: 100%;
   height: auto;
   position: absolute;
   left: 0%;
   top: 10%;
   margin-left: 0;
   margin-top: 0;
+  margin-bottom: 10rem;
   /* padding-bottom: 1rem; */
   /* z-index: 1; */
 }
@@ -52,6 +55,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10rem;
+  
   /* margin-top: 50rem; */
 }
