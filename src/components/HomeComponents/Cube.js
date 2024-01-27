@@ -9,7 +9,7 @@ import 'swiper/css/navigation';
 
 
 
-import { EffectFade, EffectCube, Pagination, Navigation, Autoplay } from 'swiper';
+import { EffectCube, Pagination, Navigation, Autoplay } from 'swiper';
 
 import slide_image_1 from '../../assets/images/food_1.jpg';
 import slide_image_2 from '../../assets/images/food_2.jpg';
@@ -20,14 +20,13 @@ import slide_image_5 from '../../assets/images/food_5.jpg';
 
 
 function Cube() {
-   
+
     return (
         <div className="container is-centered carousel-container">
             <h1 className="carousel-heading has-text-centered"> {'<Grabber Rewired />'} </h1>
             <Swiper
+                autoplay={{ delay: 3000 }}
                 effect={'cube'}
-                autoplay={true}
-                delay={50}
                 grabCursor={true}
                 centeredSlides={true}
                 loop={true}
@@ -45,7 +44,7 @@ function Cube() {
                     prevEl: '.swiper-button-prev',
                     clickable: true,
                 }}
-                modules={[EffectFade, EffectCube, Pagination, Navigation, Autoplay]}
+                modules={[ EffectCube, Pagination, Navigation, Autoplay]}
                 className="swiper_container"
             >
                 <SwiperSlide>

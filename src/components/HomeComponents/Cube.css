@@ -50,11 +50,6 @@ body {
 
 
 .slider-controler {
-  position: relative;
-  bottom: -4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  /* margin-top: 50rem; */
+ position: relative;
+ padding-bottom: 5rem;
 }
