@@ -25,7 +25,7 @@ function Cube() {
         <div className="container is-centered carousel-container">
             <h1 className="carousel-heading has-text-centered"> {'<Grabber Rewired />'} </h1>
             <Swiper
-                autoplay={{ delay: 3000 }}
+                autoplay={{ delay: 2000, disableOnInteraction: "true" }}
                 effect={'cube'}
                 grabCursor={true}
                 centeredSlides={true}
